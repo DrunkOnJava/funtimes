@@ -1,0 +1,1000 @@
+<html>
+    <head>
+        <style>
+            @font-face {
+                font-family: octicons-link;
+                src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+            }
+        
+        .markdown-body {
+            -ms-text-size-adjust: 100;
+            -webkit-text-size-adjust: 100;
+            line-height: 1.5;
+            color: #24292e;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 16px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+        
+        .markdown-body .pl-c {
+            color: #6a737d;
+        }
+        
+        .markdown-body .pl-c1,
+        .markdown-body .pl-s .pl-v {
+            color: #005cc5;
+        }
+        
+        .markdown-body .pl-e,
+        .markdown-body .pl-en {
+            color: #6f42c1;
+        }
+        
+        .markdown-body .pl-smi,
+        .markdown-body .pl-s .pl-s1 {
+            color: #24292e;
+        }
+        
+        .markdown-body .pl-ent {
+            color: #22863a;
+        }
+        
+        .markdown-body .pl-k {
+            color: #d73a49;
+        }
+        
+        .markdown-body .pl-s,
+        .markdown-body .pl-pds,
+        .markdown-body .pl-s .pl-pse .pl-s1,
+        .markdown-body .pl-sr,
+        .markdown-body .pl-sr .pl-cce,
+        .markdown-body .pl-sr .pl-sre,
+        .markdown-body .pl-sr .pl-sra {
+            color: #032f62;
+        }
+        
+        .markdown-body .pl-v,
+        .markdown-body .pl-smw {
+            color: #e36209;
+        }
+        
+        .markdown-body .pl-bu {
+            color: #b31d28;
+        }
+        
+        .markdown-body .pl-ii {
+            color: #fafbfc;
+            background-color: #b31d28;
+        }
+        
+        .markdown-body .pl-c2 {
+            color: #fafbfc;
+            background-color: #d73a49;
+        }
+        
+        .markdown-body .pl-c2::before {
+            content: "^M";
+        }
+        
+        .markdown-body .pl-sr .pl-cce {
+            font-weight: bold;
+            color: #22863a;
+        }
+        
+        .markdown-body .pl-ml {
+            color: #735c0f;
+        }
+        
+        .markdown-body .pl-mh,
+        .markdown-body .pl-mh .pl-en,
+        .markdown-body .pl-ms {
+            font-weight: bold;
+            color: #005cc5;
+        }
+        
+        .markdown-body .pl-mi {
+            font-style: italic;
+            color: #24292e;
+        }
+        
+        .markdown-body .pl-mb {
+            font-weight: bold;
+            color: #24292e;
+        }
+        
+        .markdown-body .pl-md {
+            color: #b31d28;
+            background-color: #ffeef0;
+        }
+        
+        .markdown-body .pl-mi1 {
+            color: #22863a;
+            background-color: #f0fff4;
+        }
+        
+        .markdown-body .pl-mc {
+            color: #e36209;
+            background-color: #ffebda;
+        }
+        
+        .markdown-body .pl-mi2 {
+            color: #f6f8fa;
+            background-color: #005cc5;
+        }
+        
+        .markdown-body .pl-mdr {
+            font-weight: bold;
+            color: #6f42c1;
+        }
+        
+        .markdown-body .pl-ba {
+            color: #586069;
+        }
+        
+        .markdown-body .pl-sg {
+            color: #959da5;
+        }
+        
+        .markdown-body .pl-corl {
+            text-decoration: underline;
+            color: #032f62;
+        }
+        
+        .markdown-body .octicon {
+            display: inline-block;
+            vertical-align: text-top;
+            fill: currentColor;
+        }
+        
+        .markdown-body a {
+            background-color: transparent;
+        }
+        
+        .markdown-body a:active,
+        .markdown-body a:hover {
+            outline-width: 0;
+        }
+        
+        .markdown-body strong {
+            font-weight: inherit;
+        }
+        
+        .markdown-body strong {
+            font-weight: bolder;
+        }
+        
+        .markdown-body h1 {
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+        
+        .markdown-body img {
+            border-style: none;
+        }
+        
+        .markdown-body code,
+        .markdown-body kbd,
+        .markdown-body pre {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+        
+        .markdown-body hr {
+            box-sizing: content-box;
+            height: 0;
+            overflow: visible;
+        }
+        
+        .markdown-body input {
+            font: inherit;
+            margin: 0;
+        }
+        
+        .markdown-body input {
+            overflow: visible;
+        }
+        
+        .markdown-body [type="checkbox"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+        
+        .markdown-body * {
+            box-sizing: border-box;
+        }
+        
+        .markdown-body input {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+        
+        .markdown-body a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        
+        .markdown-body a:hover {
+            text-decoration: underline;
+        }
+        
+        .markdown-body strong {
+            font-weight: 600;
+        }
+        
+        .markdown-body hr {
+            height: 0;
+            margin: 15px 0;
+            overflow: hidden;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid #dfe2e5;
+        }
+        
+        .markdown-body hr::before {
+            display: table;
+            content: "";
+        }
+        
+        .markdown-body hr::after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+        
+        .markdown-body table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        
+        .markdown-body td,
+        .markdown-body th {
+            padding: 0;
+        }
+        
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .markdown-body h1 {
+            font-size: 32px;
+            font-weight: 600;
+        }
+        
+        .markdown-body h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .markdown-body h3 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .markdown-body h4 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .markdown-body h5 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .markdown-body h6 {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .markdown-body p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .markdown-body blockquote {
+            margin: 0;
+        }
+        
+        .markdown-body ul,
+        .markdown-body ol {
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .markdown-body ol ol,
+        .markdown-body ul ol {
+            list-style-type: lower-roman;
+        }
+        
+        .markdown-body ul ul ol,
+        .markdown-body ul ol ol,
+        .markdown-body ol ul ol,
+        .markdown-body ol ol ol {
+            list-style-type: lower-alpha;
+        }
+        
+        .markdown-body dd {
+            margin-left: 0;
+        }
+        
+        .markdown-body code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 12px;
+        }
+        
+        .markdown-body pre {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 12px;
+        }
+        
+        .markdown-body .octicon {
+            vertical-align: text-bottom;
+        }
+        
+        .markdown-body .pl-0 {
+            padding-left: 0 !important;
+        }
+        
+        .markdown-body .pl-1 {
+            padding-left: 4px !important;
+        }
+        
+        .markdown-body .pl-2 {
+            padding-left: 8px !important;
+        }
+        
+        .markdown-body .pl-3 {
+            padding-left: 16px !important;
+        }
+        
+        .markdown-body .pl-4 {
+            padding-left: 24px !important;
+        }
+        
+        .markdown-body .pl-5 {
+            padding-left: 32px !important;
+        }
+        
+        .markdown-body .pl-6 {
+            padding-left: 40px !important;
+        }
+        
+        .markdown-body::before {
+            display: table;
+            content: "";
+        }
+        
+        .markdown-body::after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+        
+        .markdown-body>*:first-child {
+            margin-top: 0 !important;
+        }
+        
+        .markdown-body>*:last-child {
+            margin-bottom: 0 !important;
+        }
+        
+        .markdown-body a:not([href]) {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .markdown-body .anchor {
+            float: left;
+            padding-right: 4px;
+            margin-left: -20px;
+            line-height: 1;
+        }
+        
+        .markdown-body .anchor:focus {
+            outline: none;
+        }
+        
+        .markdown-body p,
+        .markdown-body blockquote,
+        .markdown-body ul,
+        .markdown-body ol,
+        .markdown-body dl,
+        .markdown-body table,
+        .markdown-body pre {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #e1e4e8;
+            border: 0;
+        }
+        
+        .markdown-body blockquote {
+            padding: 0 1em;
+            color: #6a737d;
+            border-left: 0.25em solid #dfe2e5;
+        }
+        
+        .markdown-body blockquote>:first-child {
+            margin-top: 0;
+        }
+        
+        .markdown-body blockquote>:last-child {
+            margin-bottom: 0;
+        }
+        
+        .markdown-body kbd {
+            display: inline-block;
+            padding: 3px 5px;
+            font-size: 11px;
+            line-height: 10px;
+            color: #444d56;
+            vertical-align: middle;
+            background-color: #fafbfc;
+            border: solid 1px #c6cbd1;
+            border-bottom-color: #959da5;
+            border-radius: 3px;
+            box-shadow: inset 0 -1px 0 #959da5;
+        }
+        
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3,
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        
+        .markdown-body h1 .octicon-link,
+        .markdown-body h2 .octicon-link,
+        .markdown-body h3 .octicon-link,
+        .markdown-body h4 .octicon-link,
+        .markdown-body h5 .octicon-link,
+        .markdown-body h6 .octicon-link {
+            color: #1b1f23;
+            vertical-align: middle;
+            visibility: hidden;
+        }
+        
+        .markdown-body h1:hover .anchor,
+        .markdown-body h2:hover .anchor,
+        .markdown-body h3:hover .anchor,
+        .markdown-body h4:hover .anchor,
+        .markdown-body h5:hover .anchor,
+        .markdown-body h6:hover .anchor {
+            text-decoration: none;
+        }
+        
+        .markdown-body h1:hover .anchor .octicon-link,
+        .markdown-body h2:hover .anchor .octicon-link,
+        .markdown-body h3:hover .anchor .octicon-link,
+        .markdown-body h4:hover .anchor .octicon-link,
+        .markdown-body h5:hover .anchor .octicon-link,
+        .markdown-body h6:hover .anchor .octicon-link {
+            visibility: visible;
+        }
+        
+        .markdown-body h1 {
+            padding-bottom: 0.3em;
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        .markdown-body h2 {
+            padding-bottom: 0.3em;
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        .markdown-body h3 {
+            font-size: 1.25em;
+        }
+        
+        .markdown-body h4 {
+            font-size: 1em;
+        }
+        
+        .markdown-body h5 {
+            font-size: 0.875em;
+        }
+        
+        .markdown-body h6 {
+            font-size: 0.85em;
+            color: #6a737d;
+        }
+        
+        .markdown-body ul,
+        .markdown-body ol {
+            padding-left: 2em;
+        }
+        
+        .markdown-body ul ul,
+        .markdown-body ul ol,
+        .markdown-body ol ol,
+        .markdown-body ol ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .markdown-body li {
+            word-wrap: break-all;
+        }
+        
+        .markdown-body li>p {
+            margin-top: 16px;
+        }
+        
+        .markdown-body li+li {
+            margin-top: 0.25em;
+        }
+        
+        .markdown-body dl {
+            padding: 0;
+        }
+        
+        .markdown-body dl dt {
+            padding: 0;
+            margin-top: 16px;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        .markdown-body dl dd {
+            padding: 0 16px;
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body table {
+            display: block;
+            width: 100;
+            overflow: auto;
+        }
+        
+        .markdown-body table th {
+            font-weight: 600;
+        }
+        
+        .markdown-body table th,
+        .markdown-body table td {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+        
+        .markdown-body table tr {
+            background-color: #fff;
+            border-top: 1px solid #c6cbd1;
+        }
+        
+        .markdown-body table tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+        
+        .markdown-body img {
+            max-width: 100;
+            box-sizing: content-box;
+            background-color: #fff;
+        }
+        
+        .markdown-body img[align=right] {
+            padding-left: 20px;
+        }
+        
+        .markdown-body img[align=left] {
+            padding-right: 20px;
+        }
+        
+        .markdown-body code {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            background-color: rgba(27,31,35,0.05);
+            border-radius: 3px;
+        }
+        
+        .markdown-body pre {
+            word-wrap: normal;
+        }
+        
+        .markdown-body pre>code {
+            padding: 0;
+            margin: 0;
+            word-break: normal;
+            white-space: pre;
+            background: transparent;
+            border: 0;
+        }
+        
+        .markdown-body .highlight {
+            margin-bottom: 16px;
+        }
+        
+        .markdown-body .highlight pre {
+            margin-bottom: 0;
+            word-break: normal;
+        }
+        
+        .markdown-body .highlight pre,
+        .markdown-body pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85;
+            line-height: 1.45;
+            background-color: #f6f8fa;
+            border-radius: 3px;
+        }
+        
+        .markdown-body pre code {
+            display: inline;
+            max-width: auto;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            line-height: inherit;
+            word-wrap: normal;
+            background-color: transparent;
+            border: 0;
+        }
+        
+        .markdown-body .full-commit .btn-outline:not(:disabled):hover {
+            color: #005cc5;
+            border-color: #005cc5;
+        }
+        
+        .markdown-body kbd {
+            display: inline-block;
+            padding: 3px 5px;
+            font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            line-height: 10px;
+            color: #444d56;
+            vertical-align: middle;
+            background-color: #fafbfc;
+            border: solid 1px #d1d5da;
+            border-bottom-color: #c6cbd1;
+            border-radius: 3px;
+            box-shadow: inset 0 -1px 0 #c6cbd1;
+        }
+        
+        .markdown-body :checked+.radio-label {
+            position: relative;
+            z-index: 1;
+            border-color: #0366d6;
+        }
+        
+        .markdown-body .task-list-item {
+            list-style-type: none;
+        }
+        
+        .markdown-body .task-list-item+.task-list-item {
+            margin-top: 3px;
+        }
+        
+        .markdown-body .task-list-item input {
+            margin: 0 0.2em 0.25em -1.6em;
+            vertical-align: middle;
+        }
+        
+        .markdown-body hr {
+            border-bottom-color: #eee;
+        }
+        
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+        
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="markdown-body"><h1>Comprehensive Bodybuilder's Guide to Steroids</h1>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#understanding-steroid-types">Understanding Steroid Types</a></li>
+<li><a href="#categorized-list-of-steroids">Categorized List of Steroids</a></li>
+<li><a href="#detailed-steroid-profiles">Detailed Steroid Profiles</a></li>
+<li><a href="#steroid-comparison-tables">Steroid Comparison Tables</a></li>
+<li><a href="#interactive-tools-and-trackers">Interactive Tools and Trackers</a></li>
+<li><a href="#glossary-of-terms">Glossary of Terms</a></li>
+<li><a href="#expanded-legal-section">Expanded Legal Section</a></li>
+<li><a href="#health-monitoring-tools-and-recommendations">Health Monitoring Tools and Recommendations</a></li>
+<li><a href="#legal-and-health-considerations">Legal and Health Considerations</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+<h2>1. Introduction</h2>
+<p>This guide provides comprehensive information about various steroids used in bodybuilding. It's important to note that the use of anabolic steroids for non-medical purposes is illegal in many countries and can pose serious health risks. This information is for educational purposes only and does not constitute medical advice.</p>
+<h2>2. Understanding Steroid Types</h2>
+<p>Steroids used in bodybuilding generally fall into two categories:</p>
+<ol>
+<li><strong>Oral Steroids</strong>: Taken by mouth, these steroids are typically fast-acting but can be more taxing on the liver.</li>
+<li><strong>Injectable Steroids</strong>: Administered via intramuscular injection, these steroids often have a longer half-life and different risk profiles compared to oral steroids.</li>
+</ol>
+<h2>3. Categorized List of Steroids</h2>
+<h3>Oral Steroids</h3>
+<h4>Bulking</h4>
+<ol>
+<li>Dianabol (Methandrostenolone)</li>
+<li>Anadrol (Oxymetholone)</li>
+<li>Methyltestosterone</li>
+<li>Superdrol (Methyldrostanolone)</li>
+</ol>
+<h4>Cutting</h4>
+<ol>
+<li>Winstrol (Stanozolol)</li>
+<li>Anavar (Oxandrolone)</li>
+<li>Turinabol (Chlorodehydromethyltestosterone)</li>
+<li>Epistane (Methylepitiostanol)</li>
+<li>Primobolan (Methenolone Acetate)</li>
+</ol>
+<h4>Strength</h4>
+<ol>
+<li>Halotestin (Fluoxymesterone)</li>
+</ol>
+<h4>Multi-purpose</h4>
+<ol>
+<li>Proviron (Mesterolone)</li>
+</ol>
+<h3>Injectable Steroids</h3>
+<h4>Bulking</h4>
+<ol>
+<li>Testosterone Enanthate</li>
+<li>Testosterone Cypionate</li>
+<li>Testosterone Propionate</li>
+<li>Testosterone Suspension</li>
+<li>Sustanon 250 (Testosterone Blend)</li>
+<li>Deca-Durabolin (Nandrolone Decanoate)</li>
+<li>Trenbolone Acetate</li>
+<li>Trenbolone Enanthate</li>
+<li>Equipoise (Boldenone Undecylenate)</li>
+<li>Parabolan (Trenbolone Hexahydrobenzylcarbonate)</li>
+<li>NPP (Nandrolone Phenylpropionate)</li>
+<li>DHB (Dihydroboldenone)</li>
+<li>Trestolone (Ment)</li>
+<li>Omnadren (Testosterone Blend)</li>
+</ol>
+<h4>Cutting</h4>
+<ol>
+<li>Masteron (Drostanolone Propionate)</li>
+<li>Primobolan (Methenolone Enanthate)</li>
+<li>Winstrol Depot (Stanozolol Injection)</li>
+</ol>
+<h4>Multi-purpose</h4>
+<ol>
+<li>Testosterone Undecanoate</li>
+</ol>
+<h2>4. Detailed Steroid Profiles</h2>
+<p>This section provides in-depth information about various anabolic steroids and related compounds. Each profile includes details on administration, effects, potential side effects, and typical usage in bodybuilding cycles.</p>
+<h3>Testosterone (Various Esters)</h3>
+<p><strong>Overview</strong>: Testosterone is the primary male sex hormone and the foundation of most steroid cycles. It's available in several ester forms, each with different release times.</p>
+<p><strong>Common Esters</strong>:</p>
+<ul>
+<li>Enanthate: Long-acting (5-7 day half-life)</li>
+<li>Cypionate: Long-acting (6-8 day half-life)</li>
+<li>Propionate: Short-acting (1-2 day half-life)</li>
+<li>Suspension: No ester, immediate release</li>
+</ul>
+<p><strong>Effects</strong>:</p>
+<ul>
+<li>Increased muscle mass and strength</li>
+<li>Enhanced protein synthesis</li>
+<li>Improved red blood cell production</li>
+<li>Increased bone density</li>
+</ul>
+<p><strong>Typical Dosage</strong>:</p>
+<ul>
+<li>Beginner: 300-500mg/week</li>
+<li>Intermediate: 500-750mg/week</li>
+<li>Advanced: 750-1000mg/week</li>
+</ul>
+<p><strong>Potential Side Effects</strong>:</p>
+<ul>
+<li>Acne</li>
+<li>Male pattern baldness (in genetically predisposed individuals)</li>
+<li>Gynecomastia (due to estrogen conversion)</li>
+<li>Testicular atrophy</li>
+<li>Increased aggression</li>
+</ul>
+<p><strong>PCT Requirements</strong>: Essential, as testosterone will suppress natural production.</p>
+<h3>Nandrolone (Deca-Durabolin)</h3>
+<p><strong>Overview</strong>: Nandrolone is a popular injectable steroid known for its ability to promote significant muscle gains with relatively low side effects.</p>
+<p><strong>Effects</strong>:</p>
+<ul>
+<li>Substantial increases in muscle mass</li>
+<li>Improved joint health and pain relief</li>
+<li>Enhanced collagen synthesis</li>
+<li>Moderate fat loss</li>
+</ul>
+<p><strong>Typical Dosage</strong>:</p>
+<ul>
+<li>300-600mg/week, usually for 12-16 weeks</li>
+</ul>
+<p><strong>Potential Side Effects</strong>:</p>
+<ul>
+<li>&quot;Deca Dick&quot; (erectile dysfunction)</li>
+<li>Progesterone-related side effects</li>
+<li>Mild androgenic effects (less than testosterone)</li>
+<li>Suppression of natural testosterone production</li>
+</ul>
+<p><strong>PCT Requirements</strong>: Extensive PCT required due to long-lasting suppression.</p>
+<h3>Trenbolone</h3>
+<p><strong>Overview</strong>: Trenbolone is one of the most potent anabolic steroids available. It's known for its ability to promote both muscle gain and fat loss.</p>
+<p><strong>Common Esters</strong>:</p>
+<ul>
+<li>Acetate: Short-acting (1-2 day half-life)</li>
+<li>Enanthate: Longer-acting (5-7 day half-life)</li>
+</ul>
+<p><strong>Effects</strong>:</p>
+<ul>
+<li>Dramatic increases in strength and muscle mass</li>
+<li>Significant fat loss</li>
+<li>Enhanced nutrient efficiency</li>
+<li>Increased vascularity</li>
+</ul>
+<p><strong>Typical Dosage</strong>:</p>
+<ul>
+<li>200-400mg/week, usually for 8-12 weeks</li>
+</ul>
+<p><strong>Potential Side Effects</strong>:</p>
+<ul>
+<li>Severe suppression of natural testosterone</li>
+<li>Increased aggression (&quot;Tren Rage&quot;)</li>
+<li>Night sweats</li>
+<li>Insomnia</li>
+<li>Cardiovascular strain</li>
+<li>Potential prostate issues</li>
+</ul>
+<p><strong>PCT Requirements</strong>: Extensive PCT required, often including hCG.</p>
+<h3>Dianabol (Methandrostenolone)</h3>
+<p><strong>Overview</strong>: Dianabol is a popular oral steroid known for rapid mass and strength gains.</p>
+<p><strong>Effects</strong>:</p>
+<ul>
+<li>Quick increases in muscle mass and strength</li>
+<li>Enhanced protein synthesis</li>
+<li>Improved glycogenolysis</li>
+</ul>
+<p><strong>Typical Dosage</strong>:</p>
+<ul>
+<li>20-50mg daily, usually for 4-6 weeks</li>
+</ul>
+<p><strong>Potential Side Effects</strong>:</p>
+<ul>
+<li>Liver toxicity</li>
+<li>High water retention and bloating</li>
+<li>Gynecomastia</li>
+<li>Acne</li>
+<li>Increased blood pressure</li>
+</ul>
+<p><strong>PCT Requirements</strong>: Requires PCT, often combined with injectable testosterone.</p>
+<h3>Anavar (Oxandrolone)</h3>
+<p><strong>Overview</strong>: Anavar is a mild oral steroid popular among both men and women due to its low androgenic effects.</p>
+<p><strong>Effects</strong>:</p>
+<ul>
+<li>Moderate increases in strength</li>
+<li>Mild fat loss</li>
+<li>Improved muscle hardness and vascularity</li>
+<li>Minimal mass gains</li>
+</ul>
+<p><strong>Typical Dosage</strong>:</p>
+<ul>
+<li>Men: 40-80mg daily</li>
+<li>Women: 5-20mg daily</li>
+<li>Usually for 6-8 weeks</li>
+</ul>
+<p><strong>Potential Side Effects</strong>:</p>
+<ul>
+<li>Mild suppression of natural testosterone</li>
+<li>Lipid strain (decreased HDL cholesterol)</li>
+<li>Minimal liver toxicity (compared to other orals)</li>
+<li>Mild androgenic effects (hair loss, acne) in sensitive individuals</li>
+</ul>
+<p><strong>PCT Requirements</strong>: Mild PCT for men, usually not required for women at low doses.</p>
+<p>[Additional steroid profiles would be included here, following the same format]</p>
+<h2>5. Steroid Comparison Tables</h2>
+<p>These comprehensive tables provide a quick reference for comparing different steroids across various factors. This information can help users make informed decisions about which compounds might be suitable for their goals and risk tolerance.</p>
+<h3>Table 1: Basic Properties and Usage</h3>
+<p>| Steroid | Type | Half-life | Common Dosage | Typical Cycle Length | Primary Use |
+|---------|------|-----------|---------------|----------------------|-------------|
+| Testosterone Enanthate | Injectable | 4.5 days | 250-1000mg/week | 12-16 weeks | Bulking/Cutting |
+| Testosterone Cypionate | Injectable | 8 days | 250-1000mg/week | 12-16 weeks | Bulking/Cutting |
+| Testosterone Propionate | Injectable | 2-3 days | 50-100mg/EOD | 8-12 weeks | Bulking/Cutting |
+| Trenbolone Acetate | Injectable | 1 day | 50-100mg/EOD | 8-12 weeks | Bulking/Cutting |
+| Trenbolone Enanthate | Injectable | 5-7 days | 200-400mg/week | 12-16 weeks | Bulking/Cutting |
+| Nandrolone Decanoate (Deca) | Injectable | 15 days | 200-600mg/week | 12-16 weeks | Bulking |
+| Boldenone Undecylenate (EQ) | Injectable | 14 days | 300-700mg/week | 16-20 weeks | Bulking |
+| Methenolone Enanthate (Primobolan) | Injectable | 10-14 days | 400-1000mg/week | 12-16 weeks | Cutting |
+| Masteron Propionate | Injectable | 2-3 days | 100-150mg/EOD | 8-12 weeks | Cutting |
+| Dianabol (Methandrostenolone) | Oral | 4-6 hours | 20-50mg/day | 4-6 weeks | Bulking |
+| Anadrol (Oxymetholone) | Oral | 8-9 hours | 50-100mg/day | 4-6 weeks | Bulking |
+| Anavar (Oxandrolone) | Oral | 9-10 hours | 40-100mg/day | 6-8 weeks | Cutting |
+| Winstrol (Stanozolol) | Oral/Injectable | 9 hours / 1 day | 40-80mg/day / 50mg/EOD | 6-8 weeks | Cutting |</p>
+<h3>Table 2: Anabolic and Androgenic Properties</h3>
+<p>| Steroid | Anabolic Rating | Androgenic Rating | Estrogenic Activity | Progestogenic Activity |
+|---------|-----------------|--------------------|--------------------|------------------------|
+| Testosterone | 100 | 100 | High | Low |
+| Trenbolone | 500 | 500 | None | Moderate |
+| Nandrolone (Deca) | 125 | 37 | Low | High |
+| Boldenone (EQ) | 100 | 50 | Low | Low |
+| Methenolone (Primobolan) | 88 | 44 | None | None |
+| Masteron | 62 | 25 | None | None |
+| Dianabol | 90-210 | 40-60 | High | Low |
+| Anadrol | 320 | 45 | High | None |
+| Anavar | 322-630 | 24 | None | None |
+| Winstrol | 320 | 30 | None | None |</p>
+<h3>Table 3: Side Effects and Risks</h3>
+<p>| Steroid | Liver Toxicity | Hair Loss Risk | Acne Risk | Gynecomastia Risk | Cardiovascular Strain |
+|---------|----------------|----------------|-----------|-------------------|----------------------|
+| Testosterone | Low | Moderate | Moderate | High | Moderate |
+| Trenbolone | Low | High | High | Low | High |
+| Nandrolone (Deca) | Low | Low | Low | Moderate | Moderate |
+| Boldenone (EQ) | Low | Moderate | Moderate | Low | High |
+| Methenolone (Primobolan) | Low | Low | Low | None | Low |
+| Masteron | Low | High | Moderate | None | Low |
+| Dianabol | High | Moderate | High | High | High |
+| Anadrol | High | Moderate | High | High | High |
+| Anavar | Moderate | Low | Low | None | Moderate |
+| Winstrol | High | High | Moderate | None | High |</p>
+<h3>Table 4: Detection Times and Legal Status</h3>
+<p>| Steroid | Detection Time | Legal Status (USA) | Prescription Availability |
+|---------|----------------|---------------------|---------------------------|
+| Testosterone | 3 months | Schedule III | Available |
+| Trenbolone | 5 months | Not FDA Approved | Not Available |
+| Nandrolone (Deca) | 18 months | Schedule III | Limited Availability |
+| Boldenone (EQ) | 5 months | Not FDA Approved | Not Available |
+| Methenolone (Primobolan) | 5 weeks | Not FDA Approved | Not Available |
+| Masteron | 3 months | Not FDA Approved | Not Available |
+| Dianabol | 5-6 weeks | Not FDA Approved | Not Available |
+| Anadrol | 8 weeks | Schedule III | Available |
+| Anavar | 3 weeks | Schedule III | Available |
+| Winstrol | 3 weeks (oral), 9 weeks (injectable) | Schedule III | Available |</p>
+<p>Note: Detection times can vary based on dosage, individual metabolism, and the sensitivity of the test used. Legal status and prescription availability may vary in different countries.</p>
+<h3>Table 5: Steroid Esters and Their Properties</h3>
+<p>| Ester | Release Speed | Active Half-Life | Peak Blood Levels | Injection Frequency |
+|-------|---------------|-------------------|-------------------|---------------------|
+| Acetate | Very Fast | 1-2 days | 1-2 days | Every Other Day |
+| Propionate | Fast | 2-3 days | 2-3 days | Every Other Day |
+| Phenylpropionate | Moderate | 4-5 days | 3-4 days | 2-3 times per week |
+| Enanthate | Slow | 7-10 days | 4-5 days | Once or twice per week |
+| Cypionate | Slow | 8-12 days | 5-6 days | Once per week |
+| Decanoate | Very Slow | 14-16 days | 7-8 days | Once per week or every 10 days |
+| Undecylenate | Very Slow | 14-16 days | 7-8 days | Once per week or every 10 days |</p>
+<h3>Table 6: Common Steroid Stacks and Their Purposes</h3>
+<p>| Stack | Compounds | Purpose | Typical Duration |
+|-------|-----------|---------|-------------------|
+| Basic Bulking | Testosterone Enanthate, Deca-Durabolin | Muscle mass gain | 12-16 weeks |
+| Advanced Bulking | Testosterone, Trenbolone, Anadrol | Rapid strength and mass gain | 8-12 weeks |
+| Cutting | Testosterone Propionate, Anavar, Winstrol | Fat loss and muscle preservation | 8-10 weeks |
+| Strength | Testosterone, Anadrol, Halotestin | Maximal strength gains | 6-8 weeks |
+| Lean Mass | Testosterone, Equipoise, Turinabol | Gradual lean mass gain | 14-18 weeks |
+| Female | Anavar, Primobolan | Mild anabolism with low virilization risk | 6-8 weeks |</p>
+<h3>Table 7: Post Cycle Therapy (PCT) Protocols</h3>
+<p>| PCT Type | Compounds | Duration | Usage Scenario |
+|----------|-----------|----------|-----------------|
+| Basic | Nolvadex | 4 weeks<!-- raw HTML omitted --></p>
+</div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steroid Cycle Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .compounds-list p {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select a Compound</h2>
+        <select id="compoundDropdown">
+            <option value="" disabled selected>Select a compound</option>
+            <option value="Testosterone Enanthate">Testosterone Enanthate</option>
+            <option value="Trenbolone Acetate">Trenbolone Acetate</option>
+            <option value="Nandrolone Decanoate">Nandrolone Decanoate</option>
+            <option value="Dianabol">Dianabol</option>
+            <option value="Anavar">Anavar</option>
+            <option value="Testosterone Propionate">Testosterone Propionate</option>
+            <option value="Boldenone Undecylenate (Equipoise)">Boldenone Undecylenate (Equipoise)</option>
+            <option value="Methenolone Enanthate (Primobolan)">Methenolone Enanthate (Primobolan)</option>
+            <option value="Stanozolol (Winstrol)">Stanozolol (Winstrol)</option>
+            <option value="Oxymetholone (Anadrol)">Oxymetholone (Anadrol)</option>
+            <option value="Clenbuterol">Clenbuterol</option>
+            <option value="Human Growth Hormone (HGH)">Human Growth Hormone (HGH)</option>
+            <option value="Nandrolone Phenylpropionate (NPP)">Nandrolone Phenylpropionate (NPP)</option>
+            <option value="Trenbolone Enanthate">Trenbolone Enanthate</option>
+            <option value="Drostanolone Propionate (Masteron)">Drostanolone Propionate (Masteron)</option>
+        </select>
+        <button id="addCompound">Add Compound</button>
+
+        <div class="compounds-list" id="addedCompounds">
+            <h3>Added Compounds:</h3>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('addCompound').addEventListener('click', function() {
+            const dropdown = document.getElementById('compoundDropdown');
+            const selectedCompound = dropdown.value;
+            const addedCompoundsDiv = document.getElementById('addedCompounds');
+
+            if (selectedCompound) {
+                const p = document.createElement('p');
+                p.textContent = selectedCompound;
+                addedCompoundsDiv.appendChild(p);
+            } else {
+                alert('Please select a compound.');
+            }
+        });
+    </script>
+</body>
+</html>
