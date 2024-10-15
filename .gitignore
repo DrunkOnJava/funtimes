@@ -1,0 +1,13 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore output and input files
+analyzedFileOutput.html
+large_outline.txt
+
+# Ignore Python cache directories and compiled files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment directories
+venv/
