@@ -11,3 +11,4 @@ __pycache__/
 
 # Ignore virtual environment directories
 venv/
+.!62906!tool_state.pkl
