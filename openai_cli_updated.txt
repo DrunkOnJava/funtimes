@@ -1,0 +1,11 @@
+This Python script is a CLI tool that interacts with the OpenAI API to generate responses based on user input. Here's a brief overview of its functionality:
+
+1. It installs required dependencies using `pip` if they are missing.
+2. It manages configuration settings, such as API key storage and AI model selection.
+3. It encrypts and decrypts API keys for security.
+4. It interacts with the OpenAI API to generate responses based on user input.
+5. It allows users to upload text files for analysis.
+6. It provides commands to set the API key, change the AI model, and adjust parameters like max tokens and temperature.
+7. It offers a help menu for command reference and a command completion interface.
+
+You can run this script in a Python environment, interact with it via the command line, and communicate with the OpenAI API to generate responses. Feel free to explore and use the functionality provided by this CLI tool for AI text generation.

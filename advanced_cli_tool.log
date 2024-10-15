@@ -1,0 +1,75 @@
+2024-10-13 01:43:50,744 - ERROR - Error using OpenAI API: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-10-13 01:45:06,762 - ERROR - Error using OpenAI API: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-10-13 01:45:13,824 - ERROR - Error using OpenAI API: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-10-13 01:52:42,413 - ERROR - Error using OpenAI API: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-10-13 01:52:52,007 - ERROR - Error using OpenAI API: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-10-13 01:54:48,091 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 01:54:58,594 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 01:56:27,098 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 01:56:31,144 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 01:56:34,367 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 01:56:36,912 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 02:36:30,693 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 02:38:30,463 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 02:48:25,163 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 02:48:47,135 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 02:48:54,447 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 02:50:12,069 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 02:54:05,158 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 03:02:50,572 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 03:03:06,552 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 03:03:25,754 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-13 05:46:50,243 - ERROR - File operation failed for valid_document.txt: [Errno 2] No such file or directory: 'valid_document.txt'
+2024-10-13 05:46:50,247 - ERROR - File operation failed for invalid_file.txt: [Errno 2] No such file or directory: 'invalid_file.txt'
+2024-10-13 05:46:50,354 - ERROR - API request failed: HTTPSConnectionPool(host='api.fake-endpoint.com', port=443): Max retries exceeded with url: /request (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x106199590>: Failed to resolve 'api.fake-endpoint.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2024-10-13 05:52:52,807 - ERROR - File operation failed for valid_document.txt: [Errno 2] No such file or directory: 'valid_document.txt'
+2024-10-13 05:52:52,809 - ERROR - File operation failed for invalid_file.txt: [Errno 2] No such file or directory: 'invalid_file.txt'
+2024-10-13 05:52:52,814 - ERROR - API request failed: HTTPSConnectionPool(host='api.fake-endpoint.com', port=443): Max retries exceeded with url: /request (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x102fd5090>: Failed to resolve 'api.fake-endpoint.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2024-10-13 05:53:30,847 - ERROR - File operation failed for valid_document.txt: [Errno 2] No such file or directory: 'valid_document.txt'
+2024-10-13 05:53:30,848 - ERROR - File operation failed for invalid_file.txt: [Errno 2] No such file or directory: 'invalid_file.txt'
+2024-10-13 05:53:30,853 - ERROR - API request failed: HTTPSConnectionPool(host='api.fake-endpoint.com', port=443): Max retries exceeded with url: /request (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x104053ed0>: Failed to resolve 'api.fake-endpoint.com' ([Errno 8] nodename nor servname provided, or not known)"))

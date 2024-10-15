@@ -1,0 +1,16 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "keyboard.touchbar.ignored": [
+    "workbench.action.debug.start",
+    "workbench.action.debug.run",
+    "workbench.action.debug.stop",
+    "workbench.action.debug.restart",
+    "workbench.action.debug.continue",
+    "workbench.action.debug.pause"
+  ],
+  "keyboard.touchbar.enabled": true
+}

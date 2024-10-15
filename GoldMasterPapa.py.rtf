@@ -1,0 +1,528 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2818
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #!/usr/bin/env python3\
+\
+import os\
+import json\
+import time\
+import sys\
+import logging\
+import subprocess\
+import argparse\
+from datetime import datetime\
+import requests\
+from colorama import Fore, Style, init\
+from tqdm import tqdm\
+from getpass import getpass\
+import yaml\
+import PyPDF2\
+from docx import Document\
+from PIL import Image\
+import pytesseract\
+import difflib\
+import openai\
+from sklearn.feature_extraction.text import TfidfVectorizer\
+from sklearn.metrics.pairwise import cosine_similarity\
+import readline\
+from prompt_toolkit import PromptSession\
+from prompt_toolkit.history import FileHistory\
+from prompt_toolkit.auto_suggest import AutoSuggestFromHistory\
+from prompt_toolkit.completion import WordCompleter\
+import wikipedia\
+import schedule\
+import threading\
+import socketio\
+import matplotlib.pyplot as plt\
+import seaborn as sns\
+import speech_recognition as sr\
+import pyttsx3\
+import git\
+from jira import JIRA\
+\
+# ... (previous imports, constants, and classes)\
+\
+class KnowledgeBaseIntegration:\
+    def __init__(self):\
+        self.wikipedia = wikipedia\
+\
+    def search_wikipedia(self, query):\
+        try:\
+            return self.wikipedia.summary(query, sentences=2)\
+        except wikipedia.exceptions.DisambiguationError as e:\
+            return f"Multiple results found. Please be more specific. Options: \{', '.join(e.options[:5])\}"\
+        except wikipedia.exceptions.PageError:\
+            return "No results found."\
+\
+class BatchQueryScheduler:\
+    def __init__(self, conversation_manager):\
+        self.conversation_manager = conversation_manager\
+        self.scheduler = schedule.Scheduler()\
+\
+    def add_query(self, query, time):\
+        self.scheduler.every().day.at(time).do(self.run_query, query)\
+\
+    def run_query(self, query):\
+        response = generate_output([\{"role": "user", "content": query\}])\
+        self.conversation_manager.add_message("user", query)\
+        self.conversation_manager.add_message("assistant", response)\
+        print(f"Scheduled query executed at \{datetime.now()\}: \{query\}")\
+        print(f"Response: \{response\}")\
+\
+    def run_pending(self):\
+        self.scheduler.run_pending()\
+\
+class CollaborativeConversation:\
+    def __init__(self):\
+        self.sio = socketio.Client()\
+        self.sio.on('message', self.on_message)\
+\
+    def connect(self, server_url):\
+        self.sio.connect(server_url)\
+\
+    def send_message(self, user, message):\
+        self.sio.emit('message', \{'user': user, 'message': message\})\
+\
+    def on_message(self, data):\
+        print(f"\{data['user']\}: \{data['message']\}")\
+\
+class ConversationAnalytics:\
+    def __init__(self, conversation_manager):\
+        self.conversation_manager = conversation_manager\
+\
+    def generate_analytics(self):\
+        conversation = self.conversation_manager.get_current_conversation()\
+        user_messages = [msg for msg in conversation if msg['role'] == 'user']\
+        assistant_messages = [msg for msg in conversation if msg['role'] == 'assistant']\
+\
+        plt.figure(figsize=(10, 6))\
+        sns.barplot(x=['User', 'Assistant'], y=[len(user_messages), len(assistant_messages)])\
+        plt.title('Message Count by Role')\
+        plt.ylabel('Number of Messages')\
+        plt.savefig('conversation_analytics.png')\
+        plt.close()\
+\
+        print(Fore.GREEN + "Analytics generated and saved as 'conversation_analytics.png'")\
+\
+class VoiceInterface:\
+    def __init__(self):\
+        self.recognizer = sr.Recognizer()\
+        self.engine = pyttsx3.init()\
+\
+    def listen(self):\
+        with sr.Microphone() as source:\
+            print(Fore.YELLOW + "Listening...")\
+            audio = self.recognizer.listen(source)\
+        try:\
+            text = self.recognizer.recognize_google(audio)\
+            print(Fore.GREEN + f"Recognized: \{text\}")\
+            return text\
+        except sr.UnknownValueError:\
+            print(Fore.RED + "Could not understand audio")\
+            return None\
+        except sr.RequestError as e:\
+            print(Fore.RED + f"Could not request results; \{e\}")\
+            return None\
+\
+    def speak(self, text):\
+        self.engine.say(text)\
+        self.engine.runAndWait()\
+\
+class ReportGenerator:\
+    def __init__(self, conversation_manager, file_analyzer):\
+        self.conversation_manager = conversation_manager\
+        self.file_analyzer = file_analyzer\
+\
+    def generate_report(self, file_path):\
+        analysis = self.file_analyzer.analyze_file(file_path)\
+        conversation_summary = self.conversation_manager.summarize_conversation()\
+\
+        report = f"Automated Report Generated on \{datetime.now()\}\\n\\n"\
+        report += f"File Analysis:\\n\{analysis\}\\n\\n"\
+        report += f"Conversation Summary:\\n\{conversation_summary\}\\n\\n"\
+        report += "AI-Generated Insights:\\n"\
+        \
+        insights_prompt = f"Based on the following file analysis and conversation summary, provide 3 key insights:\\n\\nFile Analysis: \{analysis\}\\n\\nConversation Summary: \{conversation_summary\}"\
+        insights = generate_output([\{"role": "user", "content": insights_prompt\}])\
+        report += insights\
+\
+        report_file_path = f"automated_report_\{datetime.now().strftime('%Y%m%d%H%M%S')\}.txt"\
+        with open(report_file_path, 'w') as f:\
+            f.write(report)\
+\
+        print(Fore.GREEN + f"Automated report generated and saved to \{report_file_path\}")\
+\
+class VersionControlIntegration:\
+    def __init__(self, repo_path):\
+        self.repo = git.Repo(repo_path)\
+\
+    def commit_changes(self, message):\
+        self.repo.git.add(A=True)\
+        self.repo.index.commit(message)\
+        print(Fore.GREEN + f"Changes committed: \{message\}")\
+\
+    def push_changes(self):\
+        origin = self.repo.remote(name='origin')\
+        origin.push()\
+        print(Fore.GREEN + "Changes pushed to remote repository")\
+\
+class DataProcessor:\
+    @staticmethod\
+    def preprocess(text):\
+        # Implement your preprocessing logic here\
+        return text.lower()\
+\
+    @staticmethod\
+    def postprocess(text):\
+        # Implement your postprocessing logic here\
+        return text.capitalize()\
+\
+class ConversationTester:\
+    def __init__(self, conversation_manager):\
+        self.conversation_manager = conversation_manager\
+\
+    def run_test_scenario(self, scenario):\
+        print(Fore.YELLOW + f"Running test scenario: \{scenario['name']\}")\
+        for step in scenario['steps']:\
+            response = generate_output([\{"role": "user", "content": step['input']\}])\
+            if step['expected'] in response:\
+                print(Fore.GREEN + f"Step passed: \{step['input']\}")\
+            else:\
+                print(Fore.RED + f"Step failed: \{step['input']\}")\
+                print(f"Expected: \{step['expected']\}")\
+                print(f"Got: \{response\}")\
+\
+class TaskManagementIntegration:\
+    def __init__(self, jira_url, jira_token):\
+        self.jira = JIRA(server=jira_url, token_auth=jira_token)\
+\
+    def create_task(self, summary, description, issue_type='Task'):\
+        issue_dict = \{\
+            'project': \{'key': 'YOUR_PROJECT_KEY'\},\
+            'summary': summary,\
+            'description': description,\
+            'issuetype': \{'name': issue_type\},\
+        \}\
+        new_issue = self.jira.create_issue(fields=issue_dict)\
+        print(Fore.GREEN + f"Created JIRA issue: \{new_issue.key\}")\
+\
+def handle_knowledge_base_query(kb_integration):\
+    query = input("Enter your query for the knowledge base: ")\
+    result = kb_integration.search_wikipedia(query)\
+    print(Fore.GREEN + "Knowledge Base Result:")\
+    print(result)\
+\
+def handle_batch_scheduling(batch_scheduler):\
+    query = input("Enter the query to schedule: ")\
+    time = input("Enter the time to run the query (HH:MM format): ")\
+    batch_scheduler.add_query(query, time)\
+    print(Fore.GREEN + f"Query scheduled to run daily at \{time\}")\
+\
+def handle_collaborative_conversation(collab_conversation):\
+    server_url = input("Enter the collaborative server URL: ")\
+    collab_conversation.connect(server_url)\
+    user_name = input("Enter your name: ")\
+    while True:\
+        message = input("Enter your message (or 'exit' to quit): ")\
+        if message.lower() == 'exit':\
+            break\
+        collab_conversation.send_message(user_name, message)\
+\
+def handle_voice_interface(voice_interface, conversation_manager):\
+    print(Fore.YELLOW + "Voice Interface activated. Speak your query.")\
+    query = voice_interface.listen()\
+    if query:\
+        response = generate_output([\{"role": "user", "content": query\}])\
+        print(Fore.GREEN + "AI Response:")\
+        print(response)\
+        voice_interface.speak(response)\
+\
+def handle_version_control(vc_integration):\
+    message = input("Enter commit message: ")\
+    vc_integration.commit_changes(message)\
+    push = input("Push changes to remote? (y/n): ")\
+    if push.lower() == 'y':\
+        vc_integration.push_changes()\
+\
+def handle_conversation_testing(conversation_tester):\
+    scenario = \{\
+        'name': 'Basic Greeting Test',\
+        'steps': [\
+            \{'input': 'Hello, how are you?', 'expected': 'I'm doing well'\},\
+            \{'input': 'What's the weather like?', 'expected': 'I don't have real-time weather information'\}\
+        ]\
+    \}\
+    conversation_tester.run_test_scenario(scenario)\
+\
+def handle_task_creation(task_management):\
+    summary = input("Enter task summary: ")\
+    description = input("Enter task description: ")\
+    task_management.create_task(summary, description)\
+\
+def main():\
+    parser = setup_argparse()\
+    args = parser.parse_args()\
+\
+    setup_logging(args.verbose)\
+\
+    config = Config(config_file=args.config, profile=args.profile)\
+    plugin_manager = PluginManager()\
+    plugin_manager.load_plugins()\
+\
+    conversation_manager = ConversationManager(config)\
+    file_handler = FileHandler()\
+    file_analyzer = FileAnalyzer(file_handler)\
+    model_selector = ModelSelector(config)\
+    fine_tuner = FineTuner(config)\
+    model_comparer = ModelComparer(config)\
+    response_explainer = ResponseExplainer()\
+    prompt_engineer = PromptEngineer()\
+\
+    command_history = CommandHistory(os.path.expanduser("~/.openai_claude_cli_history"))\
+    help_system = HelpSystem()\
+    alias_manager = AliasManager(config)\
+    auto_completer = AutoCompleter(list(help_system.commands.keys()) + list(alias_manager.aliases.keys()))\
+    template_manager = TemplateManager()\
+\
+    kb_integration = KnowledgeBaseIntegration()\
+    batch_scheduler = BatchQueryScheduler(conversation_manager)\
+    collab_conversation = CollaborativeConversation()\
+    conversation_analytics = ConversationAnalytics(conversation_manager)\
+    voice_interface = VoiceInterface()\
+    report_generator = ReportGenerator(conversation_manager, file_analyzer)\
+    vc_integration = VersionControlIntegration('.')  # Assumes the current directory is a git repo\
+    conversation_tester = ConversationTester(conversation_manager)\
+    task_management = TaskManagementIntegration('https://your-jira-instance.atlassian.net', 'your-jira-api-token')\
+\
+    print(Fore.CYAN + "\\nWelcome to the Advanced OpenAI/Claude CLI Tool!")\
+    print(Fore.YELLOW + f"Current model: \{config.get('default_model')\}")\
+    print(Fore.GREEN + "Type 'help' for a list of commands.")\
+\
+    session = PromptSession(\
+        history=command_history.history,\
+        auto_suggest=AutoSuggestFromHistory(),\
+        completer=auto_completer.completer\
+    )\
+\
+    # Start the batch scheduler in a separate thread\
+    scheduler_thread = threading.Thread(target=batch_scheduler.run_pending, daemon=True)\
+    scheduler_thread.start()\
+\
+    while True:\
+        try:\
+            user_input = session.prompt(Fore.WHITE + "Enter a command or start chatting: ")\
+        except KeyboardInterrupt:\
+            continue\
+        except EOFError:\
+            break\
+\
+        command = alias_manager.get_command(user_input.strip().lower())\
+        command_history.add_command(command)\
+\
+        if command == 'exit':\
+            break\
+        elif command == 'help':\
+            print(help_system.get_help())\
+        elif command == 'save':\
+            filename = input("Enter filename to save conversation: ")\
+            conversation_manager.save_conversation(filename)\
+        elif command == 'load':\
+            filename = input("Enter filename to load conversation: ")\
+            conversation_manager.load_conversation(filename)\
+        elif command == 'branch':\
+            conversation_manager.branch_conversation()\
+        elif command == 'summary':\
+            print(conversation_manager.summarize_conversation())\
+        elif command == 'analyze':\
+            handle_file_upload_and_analysis(conversation_manager, file_handler, file_analyzer)\
+        elif command == 'compare':\
+            compare_files(file_analyzer)\
+        elif command == 'report':\
+            generate_report(conversation_manager, file_analyzer)\
+        elif command == 'select_model':\
+            query = input("Enter your query for model selection: ")\
+            selected_model = handle_model_selection(model_selector, query)\
+            config.set('default_model', selected_model)\
+        elif command == 'fine_tune':\
+            handle_fine_tuning(fine_tuner)\
+        elif command == 'compare_models':\
+            handle_model_comparison(model_comparer)\
+        elif command == 'explain':\
+            response = input("Enter the response to explain: ")\
+            handle_response_explanation(response_explainer, response)\
+        elif command == 'engineer_prompt':\
+            prompt = handle_prompt_engineering(prompt_engineer)\
+            conversation_manager.add_message("user", prompt)\
+        elif command == 'history':\
+            handle_history(command_history)\
+        elif command == 'alias':\
+            handle_alias(alias_manager)\
+        elif command == 'template':\
+            handle_template(template_manager, conversation_manager)\
+        elif command == 'kb_query':\
+            handle_knowledge_base_query(kb_integration)\
+        elif command == 'schedule':\
+            handle_batch_scheduling(batch_scheduler)\
+        elif command == 'collaborate':\
+            handle_collaborative_conversation(collab_conversation)\
+        elif command == 'analytics':\
+            conversation_analytics.generate_analytics()\
+        elif command == 'voice':\
+            handle_voice_interface(voice_interface, conversation_manager)\
+        elif command == 'auto_report':\
+            file_path = input("Enter the path of the file to analyze for the report: ")\
+            report_generator.generate_report(file_path)\
+        elif command == 'vc_commit':\
+            handle_version_control(vc_integration)\
+        elif command == 'test_conversation':\
+elif command == 'test_conversation':\
+            handle_conversation_testing(conversation_tester)\
+        elif command == 'create_task':\
+            handle_task_creation(task_management)\
+        else:\
+            handle_conversation(conversation_manager)\
+\
+    print(Fore.CYAN + "Thank you for using the Advanced OpenAI/Claude CLI Tool. Goodbye!")\
+\
+if __name__ == "__main__":\
+    main()\
+\
+# Additional utility functions\
+\
+def setup_argparse():\
+    parser = argparse.ArgumentParser(description="Advanced OpenAI/Claude CLI Tool")\
+    parser.add_argument('--config', type=str, help='Path to custom config file')\
+    parser.add_argument('--profile', type=str, help='User profile name')\
+    parser.add_argument('--verbose', action='store_true', help='Enable verbose logging')\
+    return parser\
+\
+def setup_logging(verbose):\
+    level = logging.DEBUG if verbose else logging.INFO\
+    logging.basicConfig(filename='advanced_cli_tool.log', level=level, \
+                        format='%(asctime)s - %(levelname)s - %(message)s')\
+\
+def handle_conversation(conversation_manager):\
+    user_input = input(Fore.WHITE + "You: ")\
+    conversation_manager.add_message("user", user_input)\
+    response = generate_output(conversation_manager.get_current_conversation())\
+    print(Fore.GREEN + "Assistant:", response)\
+    conversation_manager.add_message("assistant", response)\
+\
+# Error handling wrapper\
+def error_handler(func):\
+    def wrapper(*args, **kwargs):\
+        try:\
+            return func(*args, **kwargs)\
+        except Exception as e:\
+            logging.error(f"Error in \{func.__name__\}: \{str(e)\}")\
+            print(Fore.RED + f"An error occurred: \{str(e)\}")\
+    return wrapper\
+\
+# Apply error handling to all command handlers\
+handle_knowledge_base_query = error_handler(handle_knowledge_base_query)\
+handle_batch_scheduling = error_handler(handle_batch_scheduling)\
+handle_collaborative_conversation = error_handler(handle_collaborative_conversation)\
+handle_voice_interface = error_handler(handle_voice_interface)\
+handle_version_control = error_handler(handle_version_control)\
+handle_conversation_testing = error_handler(handle_conversation_testing)\
+handle_task_creation = error_handler(handle_task_creation)\
+\
+# Configuration validation\
+def validate_config(config):\
+    required_keys = ['openai_key', 'claude_key', 'default_model']\
+    for key in required_keys:\
+        if key not in config.config:\
+            raise ValueError(f"Missing required configuration: \{key\}")\
+\
+# Initialize all components\
+def initialize_components(config):\
+    conversation_manager = ConversationManager(config)\
+    file_handler = FileHandler()\
+    file_analyzer = FileAnalyzer(file_handler)\
+    model_selector = ModelSelector(config)\
+    fine_tuner = FineTuner(config)\
+    model_comparer = ModelComparer(config)\
+    response_explainer = ResponseExplainer()\
+    prompt_engineer = PromptEngineer()\
+    kb_integration = KnowledgeBaseIntegration()\
+    batch_scheduler = BatchQueryScheduler(conversation_manager)\
+    collab_conversation = CollaborativeConversation()\
+    conversation_analytics = ConversationAnalytics(conversation_manager)\
+    voice_interface = VoiceInterface()\
+    report_generator = ReportGenerator(conversation_manager, file_analyzer)\
+    vc_integration = VersionControlIntegration('.')\
+    conversation_tester = ConversationTester(conversation_manager)\
+    task_management = TaskManagementIntegration('https://your-jira-instance.atlassian.net', 'your-jira-api-token')\
+\
+    return \{\
+        'conversation_manager': conversation_manager,\
+        'file_handler': file_handler,\
+        'file_analyzer': file_analyzer,\
+        'model_selector': model_selector,\
+        'fine_tuner': fine_tuner,\
+        'model_comparer': model_comparer,\
+        'response_explainer': response_explainer,\
+        'prompt_engineer': prompt_engineer,\
+        'kb_integration': kb_integration,\
+        'batch_scheduler': batch_scheduler,\
+        'collab_conversation': collab_conversation,\
+        'conversation_analytics': conversation_analytics,\
+        'voice_interface': voice_interface,\
+        'report_generator': report_generator,\
+        'vc_integration': vc_integration,\
+        'conversation_tester': conversation_tester,\
+        'task_management': task_management\
+    \}\
+\
+# Main application class\
+class AdvancedCLITool:\
+    def __init__(self, config):\
+        validate_config(config)\
+        self.config = config\
+        self.components = initialize_components(config)\
+\
+    def run(self):\
+        print(Fore.CYAN + "\\nWelcome to the Advanced OpenAI/Claude CLI Tool!")\
+        print(Fore.YELLOW + f"Current model: \{self.config.get('default_model')\}")\
+        print(Fore.GREEN + "Type 'help' for a list of commands.")\
+\
+        session = PromptSession(\
+            history=FileHistory(os.path.expanduser("~/.advanced_cli_tool_history")),\
+            auto_suggest=AutoSuggestFromHistory(),\
+            completer=WordCompleter(list(self.components['conversation_manager'].commands.keys()))\
+        )\
+\
+        # Start the batch scheduler in a separate thread\
+        scheduler_thread = threading.Thread(target=self.components['batch_scheduler'].run_pending, daemon=True)\
+        scheduler_thread.start()\
+\
+        while True:\
+            try:\
+                user_input = session.prompt(Fore.WHITE + "Enter a command or start chatting: ")\
+                self.process_command(user_input)\
+            except KeyboardInterrupt:\
+                continue\
+            except EOFError:\
+                break\
+\
+        print(Fore.CYAN + "Thank you for using the Advanced OpenAI/Claude CLI Tool. Goodbye!")\
+\
+    @error_handler\
+    def process_command(self, user_input):\
+        command = user_input.strip().lower()\
+        if command in self.components['conversation_manager'].commands:\
+            self.components['conversation_manager'].commands[command](self)\
+        else:\
+            handle_conversation(self.components['conversation_manager'])\
+\
+if __name__ == "__main__":\
+    parser = setup_argparse()\
+    args = parser.parse_args()\
+    setup_logging(args.verbose)\
+    config = Config(config_file=args.config, profile=args.profile)\
+    cli_tool = AdvancedCLITool(config)\
+    cli_tool.run()}
