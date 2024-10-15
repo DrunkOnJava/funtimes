@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Steroid Cycle Planner</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #f0f0f0;
+            --text-color: #333;
+            --container-bg: white;
+            --input-bg: white;
+            --button-bg: #4CAF50;
+            --button-color: white;
+            --section-bg: #f9f9f9;
+            --border-color: #ddd;
+        }
+        .dark-mode {
+            --bg-color: #333;
+            --text-color: #f0f0f0;
+            --container-bg: #444;
+            --input-bg: #555;
+            --button-bg: #45a049;
+            --button-color: #f0f0f0;
+            --section-bg: #3a3a3a;
+            --border-color: #666;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            background-color: var(--container-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: inline-block;
+            width: 180px;
+        }
+        input, select {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+        }
+        button {
+            background-color: var(--button-bg);
+            color: var(--button-color);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #compounds, #cycleGraph, #analysisSection, #sideEffectsSection, #pctSection {
+            margin-top: 20px;
+        }
+        .section {
+            background-color: var(--section-bg);
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        #cycleGraph {
+            background-color: var(--container-bg);
+        }
+        .warning {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        #darkModeToggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+            input, select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="darkModeToggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <div class="container">
+        <h1>Advanced Steroid Cycle Planner</h1>
+        
+        <div class="section">
+            <h2>Add Compound</h2>
+            <div class="input-group">
+                <label for="compoundName">Compound Name:</label>
+                <input type="text" id="compoundName" list="compoundList">
+                <datalist id="compoundList"></datalist>
+            </div>
+            <div class="input-group">
+                <label for="dosage">Dosage:</label>
+                <input type="number" id="dosage" min="0" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="unit">Unit:</label>
+                <select id="unit">
+                    <option value="mg">mg</option>
+                    <option value="gr">gr</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="frequency">Frequency (days):</label>
+                <input type="number" id="frequency" min="1" value="1">
+            </div>
+            <div class="input-group">
+                <label for="halfLife">Half-life (hours):</label>
+                <input type="number" id="halfLife" min="0" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="startDay">Start Day:</label>
+                <input type="number" id="startDay" min="1" value="1">
+            </div>
+            <div class="input-group">
+                <label for="endDay">End Day:</label>
+                <input type="number" id="endDay" min="1" value="84">
+            </div>
+            <div class="input-group">
+                <label for="anabolicRating">Anabolic Rating:</label>
+                <input type="number" id="anabolicRating" min="0" max="10" step="0.1">
+            </div>
+            <div class="input-group">
+                <label for="androgenicRating">Androgenic Rating:</label>
+                <input type="number" id="androgenicRating" min="0" max="10" step="0.1">
+            </div>
+            <button onclick="addCompound()">Add Compound</button>
+        </div>
+
+        <div id="compounds" class="section"></div>
+        <canvas id="cycleGraph"></canvas>
+
+        <div id="analysisSection" class="section">
+            <h2>Cycle Analysis</h2>
+            <div id="analysisContent"></div>
+        </div>
+
+        <div id="sideEffectsSection" class="section">
+            <h2>Potential Side Effects</h2>
+            <div id="sideEffectsContent"></div>
+        </div>
+
+        <div id="pctSection" class="section">
+            <h2>PCT Recommendations</h2>
+            <div id="pctContent"></div>
+        </div>
+
+        <div class="section">
+            <h2>User Profile</h2>
+            <div class="input-group">
+                <label for="userAge">Age:</label>
+                <input type="number" id="userAge" min="18" max="100">
+            </div>
+            <div class="input-group">
+                <label for="userWeight">Weight (kg):</label>
+                <input type="number" id="userWeight" min="40" max="200">
+            </div>
+            <div class="input-group">
+                <label for="userExperience">Experience Level:</label>
+                <select id="userExperience">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <button onclick="saveUserProfile()">Save Profile</button>
+        </div>
+
+        <button onclick="generatePrintableReport()">Generate Printable Report</button>
+        <button onclick="exportCycle()">Export Cycle</button>
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+        <button onclick="document.getElementById('importFile').click()">Import Cycle</button>
+    </div>
+
+    <script>
+        let compounds = [];
+        let chart;
+        let userProfile = {};
+
+        const compoundDatabase = [
+            { name: "Testosterone Enanthate", halfLife: 4.5 * 24, anabolicRating: 100, androgenicRating: 100 },
+            { name: "Trenbolone Acetate", halfLife: 3 * 24, anabolicRating: 500, androgenicRating: 500 },
+            { name: "Nandrolone Decanoate", halfLife: 6 * 24, anabolicRating: 125, androgenicRating: 37 },
+            { name: "Dianabol", halfLife: 4.5, anabolicRating: 210, androgenicRating: 60 },
+            { name: "Anavar", halfLife: 9, anabolicRating: 322, androgenicRating: 24 }
+        ];
+
+        function initCompoundDatabase() {
+            const datalist = document.getElementById('compoundList');
+            compoundDatabase.forEach(compound => {
+                const option = document.createElement('option');
+                option.value = compound.name;
+                datalist.appendChild(option);
+            });
+        }
+
+        function addCompound() {
+            const compound = {
+                name: document.getElementById('compoundName').value,
+                dosage: parseFloat(document.getElementById('dosage').value),
+                unit: document.getElementById('unit').value,
+                frequency: parseInt(document.getElementById('frequency').value),
+                halfLife: parseFloat(document.getElementById('halfLife').value),
+                startDay: parseInt(document.getElementById('startDay').value),
+                endDay: parseInt(document.getElementById('endDay').value),
+                anabolicRating: parseFloat(document.getElementById('anabolicRating').value),
+                androgenicRating: parseFloat(document.getElementById('androgenicRating').value)
+            };
+
+            const dbCompound = compoundDatabase.find(c => c.name === compound.name);
+            if (dbCompound) {
+                compound.halfLife = compound.halfLife || dbCompound.halfLife;
+                compound.anabolicRating = compound.anabolicRating || dbCompound.anabolicRating;
+                compound.androgenicRating = compound.androgenicRating || dbCompound.androgenicRating;
+            }
+
+            compounds.push(compound);
+            updateCompoundsList();
+            updateGraph();
+            updateAnalysis();
+            updateSideEffects();
+            updatePCT();
+        }
+
+        function updateCompoundsList() {
+            const compoundsDiv = document.getElementById('compounds');
+            compoundsDiv.innerHTML = '<h2>Compounds in Cycle</h2>';
+            compounds.forEach((compound, index) => {
+                compoundsDiv.innerHTML += `
+                    <div>
+                        ${compound.name} - ${compound.dosage}${compound.unit} every ${compound.frequency} day(s) 
+                        from day ${compound.startDay} to day ${compound.endDay}
+                        <button onclick="removeCompound(${index})">Remove</button>
+                        <button onclick="editCompound(${index})">Edit</button>
+                    </div>
+                `;
+            });
+        }
+
+        function removeCompound(index) {
+            compounds.splice(index, 1);
+            updateCompoundsList();
+            updateGraph();
+            updateAnalysis();
+            updateSideEffects();
+            updatePCT();
+        }
+
+        function editCompound(index) {
+            const compound = compounds[index];
+            document.getElementById('compoundName').value = compound.name;
+            document.getElementById('dosage').value = compound.dosage;
+            document.getElementById('unit').value = compound.unit;
+            document.getElementById('frequency').value = compound.frequency;
+            document.getElementById('halfLife').value = compound.halfLife;
+            document.getElementById('startDay').value = compound.startDay;
+            document.getElementById('endDay').value = compound.endDay;
+            document.getElementById('anabolicRating').value = compound.anabolicRating;
+            document.getElementById('androgenicRating').value = compound.androgenicRating;
+
+            compounds.splice(index, 1);
+            updateCompoundsList();
+            updateGraph();
+            updateAnalysis();
+            updateSideEffects();
+            updatePCT();
+        }
+
+        function updateGraph() {
+            const ctx = document.getElementById('cycleGraph').getContext('2d');
+            const labels = Array.from({length: 84}, (_, i) => i + 1);
+            const datasets = compounds.map(compound => {
+                const data = calculateSerumLevels(compound, 84);
+                return {
+                    label: compound.name,
+                    data: data,
+                    borderColor: getRandomColor(),
+                    fill: false
+                };
+            });
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Steroid Cycle Graph'
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Day'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Serum Level'
+                            }
+                        }
+                    },
+                    onClick: function(event, elements) {
+                        if (elements.length > 0) {
+                            const firstPoint = elements[0];
+                            const label = this.data.labels[firstPoint.index];
+                            const value = this.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
+                            adjustDosage(firstPoint.datasetIndex, firstPoint.index, value);
+                        }
+                    }
+                }
+            });
+        }
+
+        function adjustDosage(datasetIndex, day, currentValue) {
+            const compound = compounds[datasetIndex];
+            const newDosage = prompt(`Adjust dosage for ${compound.name} on day ${day + 1}. Current value: ${currentValue.toFixed(2)}`, compound.dosage);
+            if (newDosage !== null) {
+                compound.dosage = parseFloat(newDosage);
+                updateGraph();
+                updateAnalysis();
+                updateSideEffects();
+                updatePCT();
+            }
+        }
+
+        function calculateSerumLevels(compound, days) {
+            const levels = new Array(days).fill(0);
+            const halfLifeInDays = compound.halfLife / 24;
+            const decayRate = Math.log(2) / halfLifeInDays;
+            const doseInMg = compound.unit === 'gr' ? compound.dosage * 1000 : compound.dosage;
+
+            for (let day = compound.startDay; day <= compound.endDay; day += compound.frequency) {
+                for (let i = day - 1; i < days; i++) {
+                    const timeSinceDose = i - day + 1;
+                    levels[i] += doseInMg * Math.exp(-decayRate * timeSinceDose);
+                }
+            }
+
+            return levels;
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function updateAnalysis() {
+            const analysisContent = document.getElementById('analysisContent');
+            let analysis = '<h3>Cycle Overview</h3>';
+            
+            const cycleDuration = Math.max(...compounds.map(c => c.endDay)) - Math.min(...compounds.map(c => c.startDay)) + 1;
+            analysis += `<p>Cycle Duration: ${cycleDuration} days</p>`;
+
+            const totalAnabolic = compounds.reduce((sum, c) => sum + c.anabolicRating, 0);
+            analysis += `<p>Total Anabolic Rating: ${totalAnabolic.toFixed(2)}</p>`;
+
+            const totalAndrogenic = compounds.reduce((sum, c) => sum + c.androgenicRating, 0);
+            analysis += `<p>Total Androgenic Rating: ${totalAndrogenic.toFixed(2)}</p>`;
+
+            analysisContent.innerHTML = analysis;
+        }
+
+        function updateSideEffects() {
+            const sideEffectsContent = document.getElementById('sideEffectsContent');
+            let sideEffects = '<h3>Potential Side Effects</h3>';
+
+            const totalAndrogenic = compounds.reduce((sum, c) => sum + c.androgenicRating, 0);
+            if (totalAndrogenic > 200) {
+                sideEffects += '<p class="warning">High risk of androgenic side effects (acne, hair loss, prostate issues)</p>';
+            }
+
+            const aromatizableCompounds = compounds.filter(c => c.anabolicRating > c.androgenicRating);
+            if (aromatizableCompounds.length > 0) {
+                sideEffects += '<p class="warning">Compounds with higher anabolic than androgenic rating can cause estrogenic side effects (water retention, gyno)</p>';
+            }
+
+            const highAndrogenicCompounds = compounds.filter(c => c.androgenicRating > 100);
+            if (highAndrogenicCompounds.length > 0) {
+                sideEffects += '<p class="warning">Compounds with high androgenic rating can cause aggression, mood swings, and other hormone-related issues</p>';
+            }
+
+            sideEffectsContent.innerHTML = sideEffects;
+        }
+
+        function updatePCT() {
+            const pctContent = document.getElementById('pctContent');
+            let pct = '<h3>PCT Recommendations</h3>';
+
+            const cycleDuration = Math.max(...compounds.map(c => c.endDay)) - Math.min(...compounds.map(c => c.startDay)) + 1;
+            if (cycleDuration > 12) {
+                pct += '<p>Due to the length of the cycle, PCT is highly recommended to restore natural testosterone production.</p>';
+            } else {
+                pct += '<p>PCT may not be necessary for shorter cycles, but it is still recommended for optimal recovery.</p>';
+            }
+
+            const highAndrogenicCompounds = compounds.filter(c => c.androgenicRating > 100);
+            if (highAndrogenicCompounds.length > 0) {
+                pct += '<p>Compounds with high androgenic rating may require a longer PCT to fully recover natural testosterone production.</p>';
+            }
+
+            pct += '<h4>Suggested PCT:</h4>';
+            pct += '<ul>';
+            pct += '<li>Clomid: 50mg/day for 4 weeks</li>';
+            pct += '<li>Nolvadex: 20mg/day for 4 weeks</li>';
+            pct += '<li>HCG: 500-1000IU every 3 days for 2 weeks</li>';
+            pct += '</ul>';
+
+            pctContent.innerHTML = pct;
+        }
+
+        function saveUserProfile() {
+            userProfile = {
+                age: document.getElementById('userAge').value,
+                weight: document.getElementById('userWeight').value,
+                experience: document.getElementById('userExperience').value
+            };
+            alert('User profile saved');
+        }
+
+        function generatePrintableReport() {
+            const reportWindow = window.open('', 'Steroid Cycle Report', 'height=800,width=800');
+            reportWindow.document.write('<html><head><title>Steroid Cycle Report</title>');
+            reportWindow.document.write('<style>body { font-family: Arial, sans-serif; }</style>');
+            reportWindow.document.write('</head><body>');
+            reportWindow.document.write(`<h1>Steroid Cycle Report</h1>`);
+            reportWindow.document.write(`<h2>User Profile</h2>`);
+            reportWindow.document.write(`<p>Age: ${userProfile.age}</p>`);
+            reportWindow.document.write(`<p>Weight: ${userProfile.weight} kg</p>`);
+            reportWindow.document.write(`<p>Experience Level: ${userProfile.experience}</p>`);
+            reportWindow.document.write(`<h2>Compounds in Cycle</h2>`);
+            compounds.forEach(compound => {
+                reportWindow.document.write(`<p>${compound.name} - ${compound.dosage}${compound.unit} every ${compound.frequency} day(s) from day ${compound.startDay} to day ${compound.endDay}</p>`);
+            });
+            reportWindow.document.write(`<h2>Cycle Analysis</h2>`);
+            reportWindow.document.write(document.getElementById('analysisContent').innerHTML);
+            reportWindow.document.write(`<h2>Potential Side Effects</h2>`);
+            reportWindow.document.write(document.getElementById('sideEffectsContent').innerHTML);
+            reportWindow.document.write(`<h2>PCT Recommendations</h2>`);
+            reportWindow.document.write(document.getElementById('pctContent').innerHTML);
+            reportWindow.document.write('</body></html>');
+            reportWindow.document.close();
+        }
+
+        function exportCycle() {
+            const cycleData = {
+                compounds: compounds,
+                userProfile: userProfile
+            };
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cycleData));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "steroid-cycle.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        document.getElementById('importFile').addEventListener('change', function() {
+            const file = this.files[0];
+            const reader = new FileReader();
+            reader.onload = function() {
+                const cycleData = JSON.parse(reader.result);
+                compounds = cycleData.compounds;
+                userProfile = cycleData.userProfile;
+                updateCompoundsList();
+                updateGraph();
+                updateAnalysis();
+                updateSideEffects();
+                updatePCT();
+            };
+            reader.readAsText(file);
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        initCompoundDatabase();
+    </script>
+</body>
+</html>

@@ -1,0 +1,831 @@
+<h2>Table of Contents</h2>
+<ol>
+    <li>1 Introduction</li>
+    <li>1.1 Common Goals for Steroid Use
+        <ol>
+            <li>1.1.1 Bulking
+                <ol>
+                    <li>1.1.1.1 Building Muscle Mass</li>
+                    <li>1.1.1.2 Increasing Strength</li>
+                </ol>
+            </li>
+            <li>1.1.2 Cutting
+                <ol>
+                    <li>1.1.2.1 Reducing Body Fat</li>
+                    <li>1.1.2.2 Maintaining Muscle Mass</li>
+                </ol>
+            </li>
+            <li>1.1.3 Strength and Performance
+                <ol>
+                    <li>1.1.3.1 Gaining a Competitive Edge</li>
+                    <li>1.1.3.2 Improving Speed, Power, Endurance</li>
+                </ol>
+            </li>
+            <li>1.1.4 Recomposition
+                <ol>
+                    <li>1.1.4.1 Building Muscle and Burning Fat</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>1.2 Health Risks
+        <ol>
+            <li>1.2.1 Liver Damage
+                <ol>
+                    <li>1.2.1.1 Liver Toxicity</li>
+                    <li>1.2.1.2 Elevated Liver Enzymes</li>
+                    <li>1.2.1.3 Liver Tumors, Hepatitis</li>
+                </ol>
+            </li>
+            <li>1.2.2 Cardiovascular Strain
+                <ol>
+                    <li>1.2.2.1 Cholesterol Imbalance</li>
+                    <li>1.2.2.2 Increased Blood Pressure</li>
+                    <li>1.2.2.3 Heart Disease Risk</li>
+                </ol>
+            </li>
+            <li>1.2.3 Endocrine Disruption
+                <ol>
+                    <li>1.2.3.1 HPTA Suppression</li>
+                    <li>1.2.3.2 Low Testosterone</li>
+                    <li>1.2.3.3 Infertility</li>
+                </ol>
+            </li>
+            <li>1.2.4 Psychological Effects
+                <ol>
+                    <li>1.2.4.1 Aggression, Irritability</li>
+                    <li>1.2.4.2 Mood Swings</li>
+                    <li>1.2.4.3 Anxiety, Depression</li>
+                    <li>1.2.4.4 Addiction Potential</li>
+                </ol>
+            </li>
+            <li>1.2.5 Gynecomastia
+                <ol>
+                    <li>1.2.5.1 Male Breast Tissue Growth</li>
+                    <li>1.2.5.2 From Aromatization Into Estrogen</li>
+                </ol>
+            </li>
+            <li>1.2.6 Hair Loss
+                <ol>
+                    <li>1.2.6.1 Accelerated Male Pattern Baldness</li>
+                    <li>1.2.6.2 From DHT Conversion</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>1.3 Legal and Ethical Considerations
+        <ol>
+            <li>1.3.1 Laws and Regulations</li>
+            <li>1.3.2 Prescription Requirements</li>
+            <li>1.3.3 Competitive Sports Implications</li>
+            <li>1.3.4 Ethics of Performance Enhancement</li>
+        </ol>
+    </li>
+    <li>2 Understanding Steroid Types
+        <ol>
+            <li>2.1 Oral Steroids
+                <ol>
+                    <li>2.1.1 How Oral Steroids Work
+                        <ol>
+                            <li>2.1.1.1 Absorbed Through Digestive Tract</li>
+                            <li>2.1.1.2 Pass Through Liver Before Entering Bloodstream</li>
+                        </ol>
+                    </li>
+                    <li>2.1.2 Pros
+                        <ol>
+                            <li>2.1.2.1 Convenient Administration</li>
+                            <li>2.1.2.2 Rapid Onset of Effects</li>
+                        </ol>
+                    </li>
+                    <li>2.1.3 Cons
+                        <ol>
+                            <li>2.1.3.1 Liver Toxicity</li>
+                            <li>2.1.3.2 Shorter Half-Lives</li>
+                        </ol>
+                    </li>
+                    <li>2.1.4 Popular Oral Steroids
+                        <ol>
+                            <li>2.1.4.1 Dianabol</li>
+                            <li>2.1.4.2 Anadrol</li>
+                            <li>2.1.4.3 Anavar</li>
+                            <li>2.1.4.4 Winstrol</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>2.2 Injectable Steroids
+                <ol>
+                    <li>2.2.1 How Injectable Steroids Work
+                        <ol>
+                            <li>2.2.1.1 Absorbed Directly Into Muscle Tissues</li>
+                            <li>2.2.1.2 Gradual Release Into Bloodstream</li>
+                        </ol>
+                    </li>
+                    <li>2.2.2 Pros
+                        <ol>
+                            <li>2.2.2.1 Lower Liver Toxicity</li>
+                            <li>2.2.2.2 Longer-Lasting Effects</li>
+                            <li>2.2.2.3 Stable Blood Levels</li>
+                        </ol>
+                    </li>
+                    <li>2.2.3 Cons
+                        <ol>
+                            <li>2.2.3.1 Requires Injections</li>
+                            <li>2.2.3.2 Infection or Tissue Damage Risk</li>
+                        </ol>
+                    </li>
+                    <li>2.2.4 Popular Injectable Steroids
+                        <ol>
+                            <li>2.2.4.1 Testosterone Enanthate</li>
+                            <li>2.2.4.2 Trenbolone Acetate</li>
+                            <li>2.2.4.3 Deca-Durabolin</li>
+                            <li>2.2.4.4 Equipoise</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>2.3 Pros and Cons of Oral vs. Injectable Steroids
+                <ol>
+                    <li>2.3.1 Oral Steroids</li>
+                    <li>2.3.2 Injectable Steroids</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>3 Steroid Categories
+        <ol>
+            <li>3.1 Testosterone-Based Steroids
+                <ol>
+                    <li>3.1.1 Mechanism
+                        <ol>
+                            <li>3.1.1.1 Increases Protein Synthesis</li>
+                            <li>3.1.1.2 Boosts Nitrogen Retention</li>
+                        </ol>
+                    </li>
+                    <li>3.1.2 Common Uses
+                        <ol>
+                            <li>3.1.2.1 Bulking and Cutting Cycles</li>
+                            <li>3.1.2.2 Versatile Foundational Steroid</li>
+                        </ol>
+                    </li>
+                    <li>3.1.3 Popular Testosterone Esters
+                        <ol>
+                            <li>3.1.3.1 Testosterone Enanthate</li>
+                            <li>3.1.3.2 Testosterone Cypionate</li>
+                            <li>3.1.3.3 Testosterone Propionate</li>
+                        </ol>
+                    </li>
+                    <li>3.1.4 Side Effects
+                        <ol>
+                            <li>3.1.4.1 Aromatization Into Estrogen</li>
+                            <li>3.1.4.2 Gynecomastia, Water Retention</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>3.2 DHT-Based Steroids
+                <ol>
+                    <li>3.2.1 Mechanism
+                        <ol>
+                            <li>3.2.1.1 Cannot Aromatize Into Estrogen</li>
+                            <li>3.2.1.2 Binds to Androgen Receptors</li>
+                        </ol>
+                    </li>
+                    <li>3.2.2 Common Uses
+                        <ol>
+                            <li>3.2.2.1 Cutting Cycles</li>
+                            <li>3.2.2.2 Preserve Lean Muscle</li>
+                        </ol>
+                    </li>
+                    <li>3.2.3 Popular DHT-Based Steroids
+                        <ol>
+                            <li>3.2.3.1 Anavar (Oxandrolone)</li>
+                            <li>3.2.3.2 Winstrol (Stanozolol)</li>
+                            <li>3.2.3.3 Masteron (Drostanolone)</li>
+                        </ol>
+                    </li>
+                    <li>3.2.4 Side Effects
+                        <ol>
+                            <li>3.2.4.1 Hair Loss</li>
+                            <li>3.2.4.2 Acne</li>
+                            <li>3.2.4.3 Prostate Enlargement</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>3.3 19-Nor Steroids
+                <ol>
+                    <li>3.3.1 Mechanism
+                        <ol>
+                            <li>3.3.1.1 Binds to Androgen Receptors</li>
+                            <li>3.3.1.2 Progestogenic Properties</li>
+                        </ol>
+                    </li>
+                    <li>3.3.2 Common Uses
+                        <ol>
+                            <li>3.3.2.1 Bulking Cycles</li>
+                            <li>3.3.2.2 Increase Muscle Mass</li>
+                        </ol>
+                    </li>
+                    <li>3.3.3 Popular 19-Nor Steroids
+                        <ol>
+                            <li>3.3.3.1 Deca-Durabolin (Nandrolone Decanoate)</li>
+                            <li>3.3.3.2 Trenbolone Acetate</li>
+                        </ol>
+                    </li>
+                    <li>3.3.4 Side Effects
+                        <ol>
+                            <li>3.3.4.1 Water Retention</li>
+                            <li>3.3.4.2 Gynecomastia</li>
+                            <li>3.3.4.3 Sexual Dysfunction</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>3.4 Other Steroids
+                <ol>
+                    <li>3.4.1 Dianabol (Methandrostenolone)</li>
+                    <li>3.4.2 Equipoise (Boldenone Undecylenate)</li>
+                    <li>3.4.3 Turinabol (Chlorodehydromethyltestosterone)</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>4 Key Steroid Profiles
+        <ol>
+            <li>4.1 Testosterone
+                <ol>
+                    <li>4.1.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.1.2 Uses
+                        <ol>
+                            <li>4.1.2.1 Bulking and Cutting Cycles</li>
+                            <li>4.1.2.2 Versatile Foundational Steroid</li>
+                        </ol>
+                    </li>
+                    <li>4.1.3 Common Esters
+                        <ol>
+                            <li>4.1.3.1 Testosterone Enanthate</li>
+                            <li>4.1.3.2 Testosterone Cypionate</li>
+                            <li>4.1.3.3 Testosterone Propionate</li>
+                        </ol>
+                    </li>
+                    <li>4.1.4 Side Effects
+                        <ol>
+                            <li>4.1.4.1 Aromatization Into Estrogen</li>
+                            <li>4.1.4.2 Gynecomastia, Water Retention</li>
+                        </ol>
+                    </li>
+                    <li>4.1.5 Cycle Length</li>
+                    <li>4.1.6 Typical Dosage</li>
+                </ol>
+            </li>
+            <li>4.2 Trenbolone
+                <ol>
+                    <li>4.2.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.2.2 Uses
+                        <ol>
+                            <li>4.2.2.1 Bulking and Cutting Cycles</li>
+                            <li>4.2.2.2 Rapid Muscle Growth</li>
+                        </ol>
+                    </li>
+                    <li>4.2.3 Common Esters
+                        <ol>
+                            <li>4.2.3.1 Trenbolone Acetate</li>
+                            <li>4.2.3.2 Trenbolone Enanthate</li>
+                        </ol>
+                    </li>
+                    <li>4.2.4 Side Effects
+                        <ol>
+                            <li>4.2.4.1 Aggression, Insomnia, Sweating</li>
+                            <li>4.2.4.2 Libido and Testosterone Suppression</li>
+                        </ol>
+                    </li>
+                    <li>4.2.5 Cycle Length</li>
+                    <li>4.2.6 Typical Dosage</li>
+                </ol>
+            </li>
+            <li>4.3 Deca-Durabolin (Nandrolone Decanoate)
+                <ol>
+                    <li>4.3.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.3.2 Uses
+                        <ol>
+                            <li>4.3.2.1 Bulking Cycles</li>
+                            <li>4.3.2.2 Joint Pain Relief</li>
+                        </ol>
+                    </li>
+                    <li>4.3.3 Side Effects
+                        <ol>
+                            <li>4.3.3.1 Water Retention, Gynecomastia</li>
+                            <li>4.3.3.2 Sexual Dysfunction ("Deca Dick")</li>
+                        </ol>
+                    </li>
+                    <li>4.3.4 Cycle Length</li>
+                    <li>4.3.5 Typical Dosage</li>
+                </ol>
+            </li>
+            <li>4.4 Dianabol
+                <ol>
+                    <li>4.4.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.4.2 Uses
+                        <ol>
+                            <li>4.4.2.1 Kickstarting Bulking Cycles</li>
+                            <li>4.4.2.2 Rapid Strength and Size Gains</li>
+                        </ol>
+                    </li>
+                    <li>4.4.3 Side Effects
+                        <ol>
+                            <li>4.4.3.1 Estrogenic Activity</li>
+                            <li>4.4.3.2 Liver Toxicity</li>
+                        </ol>
+                    </li>
+                    <li>4.4.4 Cycle Length</li>
+                    <li>4.4.5 Typical Dosage</li>
+                </ol>
+            </li>
+            <li>4.5 Anavar
+                <ol>
+                    <li>4.5.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.5.2 Uses
+                        <ol>
+                            <li>4.5.2.1 Cutting Cycles</li>
+                            <li>4.5.2.2 Preserve Lean Muscle</li>
+                        </ol>
+                    </li>
+                    <li>4.5.3 Side Effects
+                        <ol>
+                            <li>4.5.3.1 Minimal Toxicity</li>
+                            <li>4.5.3.2 Cholesterol Imbalance</li>
+                        </ol>
+                    </li>
+                    <li>4.5.4 Cycle Length</li>
+                    <li>4.5.5 Typical Dosage</li>
+                </ol>
+            </li>
+            <li>4.6 Winstrol
+                <ol>
+                    <li>4.6.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.6.2 Uses
+                        <ol>
+                            <li>4.6.2.1 Cutting Cycles</li>
+                            <li>4.6.2.2 Harden and Dry Out Muscle</li>
+                        </ol>
+                    </li>
+                    <li>4.6.3 Side Effects
+                        <ol>
+                            <li>4.6.3.1 Joint Pain</li>
+                            <li>4.6.3.2 Cholesterol Changes</li>
+                        </ol>
+                    </li>
+                    <li>4.6.4 Cycle Length</li>
+                    <li>4.6.5 Typical Dosage</li>
+                </ol>
+            </li>
+            <li>4.7 Anadrol
+                <ol>
+                    <li>4.7.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.7.2 Uses
+                        <ol>
+                            <li>4.7.2.1 Kickstarting Bulking Cycles</li>
+                            <li>4.7.2.2 Rapid Strength and Mass Gains</li>
+                        </ol>
+                    </li>
+                    <li>4.7.3 Side Effects
+                        <ol>
+                            <li>4.7.3.1 Liver Toxicity</li>
+                            <li>4.7.3.2 Bloating, Water Retention</li>
+                        </ol>
+                    </li>
+                                        <li>4.7.4 Cycle Length</li>
+                    <li>4.7.5 Typical Dosage</li>
+                </ol>
+            </li>
+            <li>4.8 Equipoise
+                <ol>
+                    <li>4.8.1 Anabolic to Androgenic Ratio</li>
+                    <li>4.8.2 Uses
+                        <ol>
+                            <li>4.8.2.1 Steady, High-Quality Gains</li>
+                            <li>4.8.2.2 Recomposition Cycles</li>
+                        </ol>
+                    </li>
+                    <li>4.8.3 Side Effects
+                        <ol>
+                            <li>4.8.3.1 Increased Appetite, Acne</li>
+                            <li>4.8.3.2 Elevated Hematocrit</li>
+                        </ol>
+                    </li>
+                    <li>4.8.4 Cycle Length</li>
+                    <li>4.8.5 Typical Dosage</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>5 Steroid Comparison Tables
+        <ol>
+            <li>5.1 Basic Properties and Usage</li>
+            <li>5.2 Anabolic & Androgenic Properties</li>
+            <li>5.3 Side Effects & Risks</li>
+        </ol>
+    </li>
+    <li>6 Steroid Cycles
+        <ol>
+            <li>6.1 Beginner Cycle
+                <ol>
+                    <li>6.1.1 Cycle Length</li>
+                    <li>6.1.2 Compound</li>
+                    <li>6.1.3 Dosage</li>
+                    <li>6.1.4 PCT</li>
+                    <li>6.1.5 Aromatase Inhibitor (AI)</li>
+                </ol>
+            </li>
+            <li>6.2 Intermediate Cycle
+                <ol>
+                    <li>6.2.1 Cycle Length</li>
+                    <li>6.2.2 Compounds</li>
+                    <li>6.2.3 PCT</li>
+                    <li>6.2.4 AI</li>
+                </ol>
+            </li>
+            <li>6.3 Advanced Cycle
+                <ol>
+                    <li>6.3.1 Cycle Length</li>
+                    <li>6.3.2 Compounds</li>
+                    <li>6.3.3 PCT</li>
+                    <li>6.3.4 AI</li>
+                </ol>
+            </li>
+            <li>6.4 Cycle Support
+                <ol>
+                    <li>6.4.1 Liver Support</li>
+                    <li>6.4.2 Heart Health</li>
+                    <li>6.4.3 Cholesterol Management</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>7 Post Cycle Therapy (PCT)
+        <ol>
+            <li>7.1 Purpose of PCT
+                <ol>
+                    <li>7.1.1 Restoring Natural Testosterone Production
+                        <ol>
+                            <li>7.1.1.1 Normalizing Hormone Levels</li>
+                            <li>7.1.1.2 Restarting HPTA Function</li>
+                        </ol>
+                    </li>
+                    <li>7.1.2 Minimizing Muscle Loss
+                        <ol>
+                            <li>7.1.2.1 Maintaining Gains</li>
+                        </ol>
+                    </li>
+                    <li>7.1.3 Reducing Estrogenic Side Effects
+                        <ol>
+                            <li>7.1.3.1 Preventing Gynecomastia</li>
+                            <li>7.1.3.2 Controlling Water Retention</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>7.2 Common PCT Medications
+                <ol>
+                    <li>7.2.1 SERMs (Selective Estrogen Receptor Modulators)
+                        <ol>
+                            <li>7.2.1.1 Nolvadex (Tamoxifen)
+                                <ol>
+                                    <li>7.2.1.1.1 Dosage</li>
+                                    <li>7.2.1.1.2 Mechanism of Action</li>
+                                </ol>
+                            </li>
+                            <li>7.2.1.2 Clomid (Clomiphene Citrate)
+                                <ol>
+                                    <li>7.2.1.2.1 Dosage</li>
+                                    <li>7.2.1.2.2 Mechanism of Action</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>7.2.2 Aromatase Inhibitors (AIs)
+                        <ol>
+                            <li>7.2.2.1 Arimidex (Anastrozole)
+                                <ol>
+                                    <li>7.2.2.1.1 Dosage</li>
+                                    <li>7.2.2.1.2 Mechanism of Action</li>
+                                </ol>
+                            </li>
+                            <li>7.2.2.2 Aromasin (Exemestane)
+                                <ol>
+                                    <li>7.2.2.2.1 Dosage</li>
+                                    <li>7.2.2.2.2 Mechanism of Action</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>7.2.3 hCG (Human Chorionic Gonadotropin)
+                        <ol>
+                            <li>7.2.3.1 Dosage</li>
+                            <li>7.2.3.2 Mechanism of Action</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>7.3 PCT Protocols
+                <ol>
+                    <li>7.3.1 Standard PCT Protocol</li>
+                    <li>7.3.2 Extended PCT Protocol</li>
+                    <li>7.3.3 hCG Protocol</li>
+                </ol>
+            </li>
+            <li>7.4 Timing of PCT
+                <ol>
+                    <li>7.4.1 For Short-Ester Steroids</li>
+                    <li>7.4.2 For Long-Ester Steroids</li>
+                </ol>
+            </li>
+            <li>7.5 Duration of PCT</li>
+            <li>7.6 Post-PCT Blood Work</li>
+            <li>7.7 Common PCT Mistakes to Avoid</li>
+            <li>7.8 Nutrition and Training During PCT
+                <ol>
+                    <li>7.8.1 Dietary Considerations</li>
+                    <li>7.8.2 Training Modifications</li>
+                </ol>
+            </li>
+            <li>7.9 Recovery of Natural Testosterone Production</li>
+            <li>7.10 Psychological Aspects of PCT
+                <ol>
+                    <li>7.10.1 Mood Changes</li>
+                    <li>7.10.2 Seeking Support</li>
+                    <li>7.10.3 Lifestyle Factors</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>8 Health Considerations
+        <ol>
+            <li>8.1 Cardiovascular Health
+                <ol>
+                    <li>8.1.1 Cholesterol Balance</li>
+                    <li>8.1.2 Blood Pressure</li>
+                    <li>8.1.3 Heart Disease Risk</li>
+                </ol>
+            </li>
+            <li>8.2 Endocrine System
+                <ol>
+                    <li>8.2.1 HPTA Function</li>
+                    <li>8.2.2 Low Testosterone</li>
+                    <li>8.2.3 Hormone Imbalances</li>
+                </ol>
+            </li>
+            <li>8.3 Hepatic Health
+                <ol>
+                    <li>8.3.1 Liver Enzyme Elevation</li>
+                    <li>8.3.2 Liver Damage</li>
+                </ol>
+            </li>
+            <li>8.4 Psychological Effects
+                <ol>
+                    <li>8.4.1 Aggression and Irritability</li>
+                    <li>8.4.2 Mood Disturbances</li>
+                    <li>8.4.3 Body Image Issues</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>9 Legality & Legal Status
+        <ol>
+            <li>9.1 Legal Status by Region
+                <ol>
+                    <li>9.1.1 USA</li>
+                    <li>9.1.2 UK</li>
+                    <li>9.1.3 Canada</li>
+                    <li>9.1.4 Australia</li>
+                </ol>
+            </li>
+            <li>9.2 Penalties for Possession & Distribution
+                <ol>
+                    <li>9.2.1 Possession Penalties</li>
+                    <li>9.2.2 Trafficking Penalties</li>
+                                </ol>
+            </li>
+            <li>9.3 Steroid Testing in Sports
+                <ol>
+                    <li>9.3.1 Testing Methods</li>
+                    <li>9.3.2 Failed Tests Consequences</li>
+                </ol>
+            </li>
+            <li>9.4 Legal Alternatives
+                <ol>
+                    <li>9.4.1 Natural Supplements</li>
+                    <li>9.4.2 Prohormones</li>
+                    <li>9.4.3 SARMs</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>10 Harm Reduction & Cycle Management
+        <ol>
+            <li>10.1 Dosage Management
+                <ol>
+                    <li>10.1.1 Oral Steroids
+                        <ol>
+                            <li>10.1.1.1 Limit Dose and Duration</li>
+                        </ol>
+                    </li>
+                    <li>10.1.2 Injectable Steroids
+                        <ol>
+                            <li>10.1.2.1 Start Low, Gradually Increase</li>
+                        </ol>
+                    </li>
+                    <li>10.1.3 Avoid Overlapping Compounds
+                        <ol>
+                            <li>10.1.3.1 Don't Stack Orals</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>10.2 Cycle Length
+                <ol>
+                    <li>10.2.1 Cycle Duration
+                        <ol>
+                            <li>10.2.1.1 8-16 Week Cycles</li>
+                        </ol>
+                    </li>
+                    <li>10.2.2 Time Off
+                        <ol>
+                            <li>10.2.2.1 Equal Time On = Time Off</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>10.3 Recovery and PCT
+                <ol>
+                    <li>10.3.1 SERMs and AIs</li>
+                    <li>10.3.2 hCG</li>
+                </ol>
+            </li>
+            <li>10.4 Injection Practices
+                <ol>
+                    <li>10.4.1 Sterile Technique</li>
+                    <li>10.4.2 Site Rotation</li>
+                </ol>
+            </li>
+            <li>10.5 Quality Considerations
+                <ol>
+                    <li>10.5.1 Pharmaceutical Grade</li>
+                    <li>10.5.2 UGL (Underground Lab) Risks
+                        <ol>
+                            <li>10.5.2.1 Contamination</li>
+                            <li>10.5.2.2 Improper Dosing</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>10.6 Ancillaries
+                <ol>
+                    <li>10.6.1 Aromatase Inhibitors (AIs)</li>
+                    <li>10.6.2 Liver Support</li>
+                    <li>10.6.3 Cardiovascular Support
+                        <ol>
+                            <li>10.6.3.1 Omega-3s, CoQ10, Aspirin</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>11 Advanced Steroid Use
+        <ol>
+            <li>11.1 Blast & Cruise
+                <ol>
+                    <li>11.1.1 Blast Phase
+                        <ol>
+                            <li>11.1.1.1 High Doses for 8-12 Weeks</li>
+                        </ol>
+                    </li>
+                    <li>11.1.2 Cruise Phase
+                        <ol>
+                            <li>11.1.2.1 Lower Dose for Maintenance</li>
+                        </ol>
+                    </li>
+                    <li>11.1.3 No PCT
+                        <ol>
+                            <li>11.1.3.1 Never Fully Off Steroids</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>11.2 Competition Cycles
+                <ol>
+                    <li>11.2.1 Compounds
+                        <ol>
+                            <li>11.2.1.1 Test Prop, Tren Ace, Masteron, Winstrol</li>
+                        </ol>
+                    </li>
+                    <li>11.2.2 Diuretics
+                        <ol>
+                            <li>11.2.2.1 Lasix for Final Week(s)</li>
+                        </ol>
+                    </li>
+                    <li>11.2.3 Hardening Agents
+                        <ol>
+                            <li>11.2.3.1 Winstrol, Masteron</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>11.3 Female Use
+                <ol>
+                    <li>11.3.1 Low Doses
+                        <ol>
+                            <li>11.3.1.1 5-20mg Per Day</li>
+                        </ol>
+                    </li>
+                    <li>11.3.2 Risks
+                        <ol>
+                            <li>11.3.2.1 Virilization Effects</li>
+                        </ol>
+                    </li>
+                    <li>11.3.3 Cycle Length
+                        <ol>
+                            <li>11.3.3.1 4-6 Weeks Maximum</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>11.4 Therapeutic Use
+                <ol>
+                    <li>11.4.1 Testosterone Replacement Therapy (TRT)</li>
+                    <li>11.4.2 HRT for Aging</li>
+                </ol>
+            </li>
+            <li>11.5 Mega Dosing
+                <ol>
+                    <li>11.5.1 Doses
+                        <ol>
+                            <li>11.5.1.1 Multiple Grams Per Week</li>
+                        </ol>
+                    </li>
+                    <li>11.5.2 Health Risks
+                        <ol>
+                            <li>11.5.2.1 Severe Side Effects</li>
+                        </ol>
+                    </li>
+                    <li>11.5.3 Not Recommended
+                        <ol>
+                            <li>11.5.3.1 Extremely Dangerous</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>12 Comprehensive Steroid Tables
+        <ol>
+            <li>12.1 Oral Steroids</li>
+            <li>12.2 Injectable Steroids</li>
+            <li>12.3 DHT-based Steroids</li>
+            <li>12.4 Nandrolone-based Steroids</li>
+            <li>12.5 Other Synthetic Steroids</li>
+            <li>12.6 Testosterone Derivatives</li>
+            <li>12.7 Trenbolone Compounds</li>
+        </ol>
+    </li>
+    <li>13 Interactive Tools and Health Monitoring
+        <ol>
+            <li>13.1 Oral Steroids Table</li>
+            <li>13.2 Injectable Steroids Table</li>
+            <li>13.3 Cycle Tracking
+                <ol>
+                    <li>13.3.1 Cycle Logs</li>
+                    <li>13.3.2 PCT Logs</li>
+                    <li>13.3.3 Physical Tracking</li>
+                </ol>
+            </li>
+            <li>13.4 Meal Plans
+                <ol>
+                    <li>13.4.1 Bulking Diet</li>
+                    <li>13.4.2 Cutting Diet</li>
+                    <li>13.4.3 Maintenance Diet</li>
+                </ol>
+            </li>
+            <li>13.5 Health Monitoring
+                <ol>
+                    <li>13.5.1 Blood Work</li>
+                    <li>13.5.2 Cardiovascular Tests</li>
+                    <li>13.5.3 Liver Enzyme Tests</li>
+                    <li>13.5.4 Prostate Health</li>
+                </ol>
+            </li>
+            <li>13.6 Lifestyle Considerations
+                <ol>
+                    <li>13.6.1 Cardiovascular Exercise</li>
+                    <li>13.6.2 Balanced Nutrition</li>
+                    <li>13.6.3 Alcohol Avoidance</li>
+                    <li>13.6.4 Adequate Sleep</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>14 Conclusion</li>
+    <li>15 Appendix - Expanded Steroid Profiles</li>
+</ol>
