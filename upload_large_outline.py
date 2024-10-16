@@ -9,7 +9,6 @@ from jinja2 import Environment, FileSystemLoader
 from lxml import etree, html
 import re  # Import regular expressions for manual minification
 
-
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -29,37 +28,55 @@ try:
 except FileNotFoundError:
     logger.error("The file 'large_outline.txt' was not found. Ensure the file exists.")
     exit(1)
+except Exception as e:
+    logger.error(f"An error occurred while reading 'large_outline.txt': {e}")
+    exit(1)
 
 # Use RecursiveCharacterTextSplitter to split the text into manageable chunks
 splitter = RecursiveCharacterTextSplitter(chunk_size=2048, chunk_overlap=100)
 chunks = splitter.split_text(large_text)
+logger.info(f"Document split into {len(chunks)} chunks.")
 
 # Define a function to process each chunk
-def process_chunk(chunk):
+def process_chunk(chunk, index):
+    logger.debug(f"Processing chunk {index}: {chunk[:100]}...")  # Log the first 100 characters of the chunk for debugging
     try:
         response = chat.invoke([HumanMessage(content=chunk)])
+        logger.debug(f"Response for chunk {index}: {response.content[:100]}...")  # Log the first 100 characters of the response
         return response.content
     except Exception as e:
-        logger.error(f"Error processing chunk: {e}")
+        logger.error(f"Error processing chunk {index}: {e}")
         return None
 
 # Process chunks concurrently
 results = [None] * len(chunks)
 with concurrent.futures.ThreadPoolExecutor() as executor:
-    futures = {executor.submit(process_chunk, chunk): index for index, chunk in enumerate(chunks)}
+    futures = {executor.submit(process_chunk, chunk, index): index for index, chunk in enumerate(chunks)}
     for future in tqdm(concurrent.futures.as_completed(futures), total=len(futures), desc="Processing Chunks"):
         index = futures[future]
-        result = future.result()
-        if result:
-            results[index] = result
+        try:
+            result = future.result()
+            if result:
+                results[index] = result
+            else:
+                logger.warning(f"Chunk {index} returned no result.")
+        except Exception as e:
+            logger.error(f"Exception while processing future for chunk {index}: {e}")
 
 # Filter out None results
 filtered_results = [result for result in results if result is not None]
+if not filtered_results:
+    logger.warning("No valid results to process after filtering.")
 
 # Set up Jinja2 environment and render template
-env = Environment(loader=FileSystemLoader('.'))
-template = env.get_template('template.html')
-rendered_html = template.render(chunks=filtered_results)
+try:
+    env = Environment(loader=FileSystemLoader('.'))
+    template = env.get_template('template.html')
+    rendered_html = template.render(chunks=filtered_results)
+    logger.info("Template rendering completed.")
+except Exception as e:
+    logger.error(f"Error rendering the template: {e}")
+    exit(1)
 
 # Validate the HTML
 try:
@@ -68,6 +85,7 @@ try:
     logger.info("HTML validation successful. No syntax errors found.")
 except etree.XMLSyntaxError as e:
     logger.error(f"HTML validation failed: {e}")
+    exit(1)
 
 # Manual HTML Minification
 def manual_minify(html_content):
@@ -91,3 +109,4 @@ try:
     logger.info("Minified HTML output written to analyzedFileOutput.html")
 except Exception as e:
     logger.error(f"Failed to write minified HTML to file: {e}")
+    exit(1)
