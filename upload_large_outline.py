@@ -7,7 +7,8 @@ from tqdm import tqdm
 import concurrent.futures
 from jinja2 import Environment, FileSystemLoader
 from lxml import etree, html
-import htmlmin
+import re  # Import regular expressions for manual minification
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -68,8 +69,20 @@ try:
 except etree.XMLSyntaxError as e:
     logger.error(f"HTML validation failed: {e}")
 
-# Minify the HTML
-minified_html = htmlmin.minify(rendered_html, remove_empty_space=True)
+# Manual HTML Minification
+def manual_minify(html_content):
+    """ Manually minify the HTML content by removing extra spaces, newlines, and comments. """
+    # Remove comments
+    html_content = re.sub(r"<!--.*?-->", "", html_content, flags=re.DOTALL)
+    
+    # Remove unnecessary whitespace
+    html_content = re.sub(r">\s+<", "><", html_content)  # Remove spaces between HTML tags
+    html_content = re.sub(r"\s{2,}", " ", html_content)  # Replace multiple spaces with a single space
+    
+    return html_content
+
+# Minify the HTML using the manual minification function
+minified_html = manual_minify(rendered_html)
 
 # Write minified HTML to file
 try:
@@ -77,4 +90,4 @@ try:
         output_file.write(minified_html)
     logger.info("Minified HTML output written to analyzedFileOutput.html")
 except Exception as e:
-    logger.error(f"Error writing to output file: {e}")
+    logger.error(f"Failed to write minified HTML to file: {e}")
